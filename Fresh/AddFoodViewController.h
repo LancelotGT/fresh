@@ -8,6 +8,6 @@
 
 #import "ViewController.h"
 
-@interface AddFoodViewController : ViewController
+@interface AddFoodViewController : ViewController <UIAlertViewDelegate>
 
 @end

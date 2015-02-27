@@ -7,6 +7,7 @@
 //
 
 #import "basicTVC.h"
+#import <Parse/Parse.h>
 
 @interface MainTVC : basicTVC <UIActionSheetDelegate>
 

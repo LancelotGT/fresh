@@ -9,6 +9,7 @@
 #import "AddFoodViewController.h"
 #import "ViewController.h"
 #import "Food.h"
+#import <Parse/Parse.h>
 
 @interface AddFoodViewController ()
 
@@ -24,6 +25,37 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)eggButtonClicked:(UIButton *)sender {
+    [self queryForData:@"egg"];
+}
+
+- (IBAction)appleButtonClicked:(UIButton *)sender {
+    [self queryForData:@"apple"];
+}
+
+- (void) queryForData: (NSString *) title {
+    PFQuery *query = [PFQuery queryWithClassName:@"Default"];
+    //__block id expDate;
+    [query whereKey:@"type" equalTo:title];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            for (PFObject *object in objects) {
+                NSLog(@"Object ID: %@", object.objectId);
+                NSLog(@"Food type: %@", object[@"type"]);
+                NSLog(@"Expiraton date: %@", object[@"date"]);
+                id expDate = object[@"date"];
+                NSString *alertMessage = [[NSString alloc] initWithFormat:@"The food will expire after %@ days!", expDate];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Food Details" message: alertMessage delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
 /*
