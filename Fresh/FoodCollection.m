@@ -21,7 +21,6 @@
 }
 
 - (void)addFood:(Food *)food atTop:(BOOL)atTop {
-    NSLog(@"!!!!!%@", food.type);
     if (atTop) {
         [self.foods insertObject:food atIndex:0];
     } else {
@@ -30,7 +29,6 @@
 }
 
 - (void)addFood:(Food *)food {
-    NSLog(@"!!!!!%@", food.type);
     [self addFood:food atTop:NO];
 }
 

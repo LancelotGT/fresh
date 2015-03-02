@@ -14,6 +14,7 @@
 @interface MainTVC ()
 @property (strong, nonatomic) FoodCollection  *refrigeratorFoodCollection;
 @property (strong, nonatomic) FoodCollection *freezerFoodCollection;
+@property (strong, nonatomic) FoodCollection *displayFoodCollection;
 
 @end
 
@@ -29,6 +30,11 @@
     return _freezerFoodCollection;
 }
 
+-(FoodCollection *)displayFoodCollection  {
+    if (!_displayFoodCollection) _displayFoodCollection = [[FoodCollection alloc]init];
+    return _displayFoodCollection;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -40,16 +46,20 @@
     food2.type = @"muffin";
     food2.expTime = @"10";
     food2.foodID = @"1";
-//    NSLog(@"%@", food1.type);
-//    NSLog(@"%@", food2.type);
     [self.refrigeratorFoodCollection addFood:food1];
     [self.refrigeratorFoodCollection addFood:food2];
-    NSLog(@"%ld", [self.refrigeratorFoodCollection foodCount]);
-    NSString *imageName1 =[self.refrigeratorFoodCollection FoodAtIndex:0].type;
-    NSString *imageName2 = [self.refrigeratorFoodCollection FoodAtIndex:1].type;
+    self.displayFoodCollection = self.refrigeratorFoodCollection;
     
-    NSLog(@"%@", imageName1);
-    NSLog(@"%@", imageName2);
+    Food *food3 = [[Food alloc] init];
+    food3.type = @"muffin";
+    food3.expTime = @"10";
+    food3.foodID = @"1";
+    Food *food4 = [[Food alloc] init];
+    food4.type = @"egg";
+    food4.expTime = @"10";
+    food4.foodID = @"1";
+    [self.freezerFoodCollection addFood:food3];
+    [self.freezerFoodCollection addFood:food4];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,13 +76,8 @@
     MultipleFoodTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Food Cell" forIndexPath:indexPath];
     
     // Configure the cell...
-    NSString *imageName1 =[self.refrigeratorFoodCollection FoodAtIndex:0].type;
-    NSString *imageName2 = [self.refrigeratorFoodCollection FoodAtIndex:1].type;
-
-    NSLog(@"%@", imageName1);
-    NSLog(@"%@", imageName2);
-    cell.imageView1.image = [UIImage imageNamed:[self.refrigeratorFoodCollection FoodAtIndex:0].type];
-    cell.imageView2.image = [UIImage imageNamed:[self.refrigeratorFoodCollection FoodAtIndex:1].type];
+    cell.imageView1.image = [UIImage imageNamed:[self.displayFoodCollection FoodAtIndex:0].type];
+    cell.imageView2.image = [UIImage imageNamed:[self.displayFoodCollection FoodAtIndex:1].type];
     
     return cell;
 }
@@ -110,6 +115,19 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     // TO DO: called when a UIButton is tapped.
+}
+
+- (IBAction)SegmentControlTouched:(UISegmentedControl *)sender {
+    NSInteger selectedSegment = sender.selectedSegmentIndex;
+    
+    if (selectedSegment == 0) {
+        self.displayFoodCollection = self.refrigeratorFoodCollection;
+    }
+    else {
+        self.displayFoodCollection = self.freezerFoodCollection;
+    }
+    
+    [self.tableView reloadData];
 }
 
 @end
