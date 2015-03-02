@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Food.h"
 
 @interface FoodCollection : NSObject
+
+- (NSInteger) foodCount;
+
+- (void)addFood:(Food *)food atTop:(BOOL)atTop;
+
+- (void)addFood:(Food *)food;
+
+- (Food *)FoodAtIndex: (NSInteger) index;
 
 @end

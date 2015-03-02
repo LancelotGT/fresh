@@ -9,6 +9,7 @@
 #import "FreshViewController.h"
 
 @interface FreshViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *foodDisplayTableView;
 
 @end
 
@@ -33,5 +34,28 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)filterButtonClicked:(UIBarButtonItem *)sender {
+    NSString *actionSheetTitle = @"Filter By"; //Action Sheet Title
+    //    NSAttributedString *actionSheetTitle = [[NSAttributedString alloc] initWithString:@"Filter By" attributes:@{NSFontAttributeName : [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline], NSForegroundColorAttributeName : [UIColor greenColor]}];
+    NSString *other1 = @"Date Added";
+    NSString *other2 = @"Expire date";
+    NSString *other3 = @"Categories";
+    NSString *cancelTitle = @"Cancel";
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:actionSheetTitle
+                                  delegate:self
+                                  cancelButtonTitle:cancelTitle
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:other1, other2, other3, nil];
+    [actionSheet showInView:self.view];
+}
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    // TO DO: called when a UIButton is tapped.
+}
+
 
 @end

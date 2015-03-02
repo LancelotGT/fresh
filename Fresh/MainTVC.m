@@ -8,19 +8,48 @@
 
 #import "MainTVC.h"
 #import "MultipleFoodTableViewCell.h"
+#import "FoodCollection.h"
+#import "Food.h"
 
 @interface MainTVC ()
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *addFoodButton;
+@property (strong, nonatomic) FoodCollection  *refrigeratorFoodCollection;
+@property (strong, nonatomic) FoodCollection *freezerFoodCollection;
+
 @end
 
 @implementation MainTVC
 
+-(FoodCollection *)refrigeratorFoodCollection {
+    if (!_refrigeratorFoodCollection) _refrigeratorFoodCollection = [[FoodCollection alloc]init];
+    return _refrigeratorFoodCollection;
+}
+
+-(FoodCollection *)freezerFoodCollection {
+    if (!_freezerFoodCollection) _freezerFoodCollection = [[FoodCollection alloc]init];
+    return _freezerFoodCollection;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
+    Food *food1 = [[Food alloc] init];
+    food1.type = @"apple";
+    food1.expTime = @"10";
+    food1.foodID = @"1";
+    Food *food2 = [[Food alloc] init];
+    food2.type = @"muffin";
+    food2.expTime = @"10";
+    food2.foodID = @"1";
+//    NSLog(@"%@", food1.type);
+//    NSLog(@"%@", food2.type);
+    [self.refrigeratorFoodCollection addFood:food1];
+    [self.refrigeratorFoodCollection addFood:food2];
+    NSLog(@"%ld", [self.refrigeratorFoodCollection foodCount]);
+    NSString *imageName1 =[self.refrigeratorFoodCollection FoodAtIndex:0].type;
+    NSString *imageName2 = [self.refrigeratorFoodCollection FoodAtIndex:1].type;
+    
+    NSLog(@"%@", imageName1);
+    NSLog(@"%@", imageName2);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,12 +66,13 @@
     MultipleFoodTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Food Cell" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.imageView1.image = [UIImage imageNamed:@"egg"];
-    cell.imageView2.image = [UIImage imageNamed:@"apple"];
-    cell.imageView3.image = [UIImage imageNamed:@"milk"];
-    cell.imageView4.image = [UIImage imageNamed:@"muffin"];
-    
-    
+    NSString *imageName1 =[self.refrigeratorFoodCollection FoodAtIndex:0].type;
+    NSString *imageName2 = [self.refrigeratorFoodCollection FoodAtIndex:1].type;
+
+    NSLog(@"%@", imageName1);
+    NSLog(@"%@", imageName2);
+    cell.imageView1.image = [UIImage imageNamed:[self.refrigeratorFoodCollection FoodAtIndex:0].type];
+    cell.imageView2.image = [UIImage imageNamed:[self.refrigeratorFoodCollection FoodAtIndex:1].type];
     
     return cell;
 }

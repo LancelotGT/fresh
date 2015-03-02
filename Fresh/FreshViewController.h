@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FreshViewController : UIViewController
+@interface FreshViewController : UIViewController <UIActionSheetDelegate>
 
 @end

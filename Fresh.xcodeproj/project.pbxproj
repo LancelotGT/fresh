@@ -7,35 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7364C3951A9C14000022B472 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7364C3931A9C14000022B472 /* Model.xcdatamodeld */; };
-		7364C3971A9C18890022B472 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7364C3961A9C18890022B472 /* Bolts.framework */; };
-		7364C3991A9C18A20022B472 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7364C3981A9C18A20022B472 /* Parse.framework */; };
-		7364C3A61A9C20CE0022B472 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7364C39B1A9C20CE0022B472 /* AudioToolbox.framework */; };
-		7364C3A71A9C20CE0022B472 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7364C39C1A9C20CE0022B472 /* CFNetwork.framework */; };
-		7364C3A81A9C20CE0022B472 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7364C39D1A9C20CE0022B472 /* CoreGraphics.framework */; };
-		7364C3A91A9C20CE0022B472 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7364C39E1A9C20CE0022B472 /* CoreLocation.framework */; };
-		7364C3AA1A9C20CE0022B472 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7364C39F1A9C20CE0022B472 /* libsqlite3.dylib */; };
-		7364C3AB1A9C20CE0022B472 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7364C3A01A9C20CE0022B472 /* libz.dylib */; };
-		7364C3AC1A9C20CE0022B472 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7364C3A11A9C20CE0022B472 /* MobileCoreServices.framework */; };
-		7364C3AD1A9C20CE0022B472 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7364C3A21A9C20CE0022B472 /* QuartzCore.framework */; };
-		7364C3AE1A9C20CE0022B472 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7364C3A31A9C20CE0022B472 /* Security.framework */; };
-		7364C3AF1A9C20CE0022B472 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7364C3A41A9C20CE0022B472 /* StoreKit.framework */; };
-		7364C3B01A9C20CE0022B472 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7364C3A51A9C20CE0022B472 /* SystemConfiguration.framework */; };
+		7379D2B11AA3B870001B78C2 /* FreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7379D2B01AA3B86F001B78C2 /* FreshViewController.m */; };
+		7379D2B71AA3CED8001B78C2 /* FoodCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7379D2B61AA3CED8001B78C2 /* FoodCollection.m */; };
+		7379D2BA1AA3CF9E001B78C2 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 7379D2B91AA3CF9E001B78C2 /* Food.m */; };
 		73A108B71A96FCAC00233F37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A108B61A96FCAC00233F37 /* main.m */; };
 		73A108BA1A96FCAC00233F37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A108B91A96FCAC00233F37 /* AppDelegate.m */; };
-		73A108BD1A96FCAC00233F37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A108BC1A96FCAC00233F37 /* ViewController.m */; };
 		73A108C01A96FCAC00233F37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73A108BE1A96FCAC00233F37 /* Main.storyboard */; };
 		73A108C51A96FCAC00233F37 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73A108C31A96FCAC00233F37 /* LaunchScreen.xib */; };
 		73A108D11A96FCAC00233F37 /* FreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A108D01A96FCAC00233F37 /* FreshTests.m */; };
-		73A108DF1A97809300233F37 /* Fridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A108DE1A97809300233F37 /* Fridge.m */; };
-		73A108E31A9787F700233F37 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A108E21A9787F700233F37 /* Food.m */; };
-		73A108E61A97F91E00233F37 /* AddFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A108E51A97F91E00233F37 /* AddFoodViewController.m */; };
-		73A108E91A98004D00233F37 /* FoodCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A108E81A98004D00233F37 /* FoodCollection.m */; };
-		73A108F21A991CA200233F37 /* ContentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A108F11A991CA200233F37 /* ContentTVC.m */; };
-		73A108F51A991E5000233F37 /* RefrigeratorContentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A108F41A991E5000233F37 /* RefrigeratorContentTVC.m */; };
-		73A108FA1A9920C500233F37 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A108F91A9920C500233F37 /* FlickrFetcher.m */; };
-		73A109001A992A7600233F37 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A108FF1A992A7600233F37 /* ImageViewController.m */; };
-		73A109061A993A4000233F37 /* FoodContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A109051A993A4000233F37 /* FoodContentViewController.m */; };
 		73A109081A9A30D400233F37 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73A109071A9A30D400233F37 /* Images.xcassets */; };
 		73A1090B1A9A32FD00233F37 /* TopNavigationControllerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A1090A1A9A32FD00233F37 /* TopNavigationControllerVC.m */; };
 		73A109111A9A475300233F37 /* basicTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A109101A9A475300233F37 /* basicTVC.m */; };
@@ -55,51 +34,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7364C3941A9C14000022B472 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		7364C3961A9C18890022B472 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		7364C3981A9C18A20022B472 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		7364C39B1A9C20CE0022B472 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		7364C39C1A9C20CE0022B472 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		7364C39D1A9C20CE0022B472 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		7364C39E1A9C20CE0022B472 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		7364C39F1A9C20CE0022B472 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		7364C3A01A9C20CE0022B472 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		7364C3A11A9C20CE0022B472 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		7364C3A21A9C20CE0022B472 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		7364C3A31A9C20CE0022B472 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		7364C3A41A9C20CE0022B472 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		7364C3A51A9C20CE0022B472 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7379D2AF1AA3B86F001B78C2 /* FreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreshViewController.h; sourceTree = "<group>"; };
+		7379D2B01AA3B86F001B78C2 /* FreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshViewController.m; sourceTree = "<group>"; };
+		7379D2B51AA3CED8001B78C2 /* FoodCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodCollection.h; sourceTree = "<group>"; };
+		7379D2B61AA3CED8001B78C2 /* FoodCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodCollection.m; sourceTree = "<group>"; };
+		7379D2B81AA3CF9E001B78C2 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
+		7379D2B91AA3CF9E001B78C2 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
 		73A108B11A96FCAC00233F37 /* Fresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A108B51A96FCAC00233F37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73A108B61A96FCAC00233F37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		73A108B81A96FCAC00233F37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		73A108B91A96FCAC00233F37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		73A108BB1A96FCAC00233F37 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		73A108BC1A96FCAC00233F37 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		73A108BF1A96FCAC00233F37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73A108C41A96FCAC00233F37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		73A108CA1A96FCAC00233F37 /* FreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A108CF1A96FCAC00233F37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73A108D01A96FCAC00233F37 /* FreshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshTests.m; sourceTree = "<group>"; };
-		73A108DD1A97809300233F37 /* Fridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fridge.h; sourceTree = "<group>"; };
-		73A108DE1A97809300233F37 /* Fridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fridge.m; sourceTree = "<group>"; };
-		73A108E11A9787F700233F37 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
-		73A108E21A9787F700233F37 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
-		73A108E41A97F91E00233F37 /* AddFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFoodViewController.h; sourceTree = "<group>"; };
-		73A108E51A97F91E00233F37 /* AddFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFoodViewController.m; sourceTree = "<group>"; };
-		73A108E71A98004D00233F37 /* FoodCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodCollection.h; sourceTree = "<group>"; };
-		73A108E81A98004D00233F37 /* FoodCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodCollection.m; sourceTree = "<group>"; };
-		73A108F01A991CA200233F37 /* ContentTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentTVC.h; sourceTree = "<group>"; };
-		73A108F11A991CA200233F37 /* ContentTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTVC.m; sourceTree = "<group>"; };
-		73A108F31A991E5000233F37 /* RefrigeratorContentTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefrigeratorContentTVC.h; sourceTree = "<group>"; };
-		73A108F41A991E5000233F37 /* RefrigeratorContentTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefrigeratorContentTVC.m; sourceTree = "<group>"; };
-		73A108F71A9920C500233F37 /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
-		73A108F81A9920C500233F37 /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
-		73A108F91A9920C500233F37 /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
-		73A108FE1A992A7600233F37 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
-		73A108FF1A992A7600233F37 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
-		73A109041A993A4000233F37 /* FoodContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoodContentViewController.h; path = ../FoodContentViewController.h; sourceTree = "<group>"; };
-		73A109051A993A4000233F37 /* FoodContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FoodContentViewController.m; path = ../FoodContentViewController.m; sourceTree = "<group>"; };
 		73A109071A9A30D400233F37 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		73A109091A9A32FD00233F37 /* TopNavigationControllerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopNavigationControllerVC.h; sourceTree = "<group>"; };
 		73A1090A1A9A32FD00233F37 /* TopNavigationControllerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopNavigationControllerVC.m; sourceTree = "<group>"; };
@@ -118,19 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7364C3A61A9C20CE0022B472 /* AudioToolbox.framework in Frameworks */,
-				7364C3A71A9C20CE0022B472 /* CFNetwork.framework in Frameworks */,
-				7364C3A81A9C20CE0022B472 /* CoreGraphics.framework in Frameworks */,
-				7364C3A91A9C20CE0022B472 /* CoreLocation.framework in Frameworks */,
-				7364C3AA1A9C20CE0022B472 /* libsqlite3.dylib in Frameworks */,
-				7364C3AB1A9C20CE0022B472 /* libz.dylib in Frameworks */,
-				7364C3AC1A9C20CE0022B472 /* MobileCoreServices.framework in Frameworks */,
-				7364C3AD1A9C20CE0022B472 /* QuartzCore.framework in Frameworks */,
-				7364C3AE1A9C20CE0022B472 /* Security.framework in Frameworks */,
-				7364C3AF1A9C20CE0022B472 /* StoreKit.framework in Frameworks */,
-				7364C3B01A9C20CE0022B472 /* SystemConfiguration.framework in Frameworks */,
-				7364C3991A9C18A20022B472 /* Parse.framework in Frameworks */,
-				7364C3971A9C18890022B472 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,30 +81,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7364C39A1A9C20470022B472 /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-				7364C39B1A9C20CE0022B472 /* AudioToolbox.framework */,
-				7364C39C1A9C20CE0022B472 /* CFNetwork.framework */,
-				7364C39D1A9C20CE0022B472 /* CoreGraphics.framework */,
-				7364C39E1A9C20CE0022B472 /* CoreLocation.framework */,
-				7364C39F1A9C20CE0022B472 /* libsqlite3.dylib */,
-				7364C3A01A9C20CE0022B472 /* libz.dylib */,
-				7364C3A11A9C20CE0022B472 /* MobileCoreServices.framework */,
-				7364C3A21A9C20CE0022B472 /* QuartzCore.framework */,
-				7364C3A31A9C20CE0022B472 /* Security.framework */,
-				7364C3A41A9C20CE0022B472 /* StoreKit.framework */,
-				7364C3A51A9C20CE0022B472 /* SystemConfiguration.framework */,
-				7364C3961A9C18890022B472 /* Bolts.framework */,
-				7364C3981A9C18A20022B472 /* Parse.framework */,
-			);
-			name = Framework;
-			sourceTree = "<group>";
-		};
 		73A108A81A96FCAC00233F37 = {
 			isa = PBXGroup;
 			children = (
-				7364C3931A9C14000022B472 /* Model.xcdatamodeld */,
 				73A108B31A96FCAC00233F37 /* Fresh */,
 				73A108CD1A96FCAC00233F37 /* FreshTests */,
 				73A108B21A96FCAC00233F37 /* Products */,
@@ -186,13 +102,10 @@
 		73A108B31A96FCAC00233F37 /* Fresh */ = {
 			isa = PBXGroup;
 			children = (
-				7364C39A1A9C20470022B472 /* Framework */,
 				73A108BE1A96FCAC00233F37 /* Main.storyboard */,
-				73A1091B1A9A878400233F37 /* Master */,
-				73A1091C1A9A87B700233F37 /* Experiment */,
+				73A1091B1A9A878400233F37 /* ViewControllers */,
 				73A108C31A96FCAC00233F37 /* LaunchScreen.xib */,
 				73A109071A9A30D400233F37 /* Images.xcassets */,
-				73A108F61A9920C500233F37 /* Flickr Fetcher */,
 				73A108E01A9780A000233F37 /* Model */,
 				73A108B41A96FCAC00233F37 /* Supporting Files */,
 			);
@@ -230,30 +143,20 @@
 		73A108E01A9780A000233F37 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				73A108E71A98004D00233F37 /* FoodCollection.h */,
-				73A108E81A98004D00233F37 /* FoodCollection.m */,
-				73A108DD1A97809300233F37 /* Fridge.h */,
-				73A108E11A9787F700233F37 /* Food.h */,
-				73A108E21A9787F700233F37 /* Food.m */,
-				73A108DE1A97809300233F37 /* Fridge.m */,
+				7379D2B81AA3CF9E001B78C2 /* Food.h */,
+				7379D2B91AA3CF9E001B78C2 /* Food.m */,
+				7379D2B51AA3CED8001B78C2 /* FoodCollection.h */,
+				7379D2B61AA3CED8001B78C2 /* FoodCollection.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
 		};
-		73A108F61A9920C500233F37 /* Flickr Fetcher */ = {
-			isa = PBXGroup;
-			children = (
-				73A108F71A9920C500233F37 /* FlickrAPIKey.h */,
-				73A108F81A9920C500233F37 /* FlickrFetcher.h */,
-				73A108F91A9920C500233F37 /* FlickrFetcher.m */,
-			);
-			path = "Flickr Fetcher";
-			sourceTree = "<group>";
-		};
-		73A1091B1A9A878400233F37 /* Master */ = {
+		73A1091B1A9A878400233F37 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				73A109181A9A836F00233F37 /* MostlyAddedTVC.h */,
+				7379D2AF1AA3B86F001B78C2 /* FreshViewController.h */,
+				7379D2B01AA3B86F001B78C2 /* FreshViewController.m */,
 				73A109191A9A836F00233F37 /* MostlyAddedTVC.m */,
 				73A1090F1A9A475300233F37 /* basicTVC.h */,
 				73A109101A9A475300233F37 /* basicTVC.m */,
@@ -263,27 +166,8 @@
 				73A109161A9A4DEE00233F37 /* MultipleFoodTableViewCell.m */,
 				73A109091A9A32FD00233F37 /* TopNavigationControllerVC.h */,
 				73A1090A1A9A32FD00233F37 /* TopNavigationControllerVC.m */,
-				73A108E41A97F91E00233F37 /* AddFoodViewController.h */,
-				73A108E51A97F91E00233F37 /* AddFoodViewController.m */,
 			);
-			name = Master;
-			sourceTree = "<group>";
-		};
-		73A1091C1A9A87B700233F37 /* Experiment */ = {
-			isa = PBXGroup;
-			children = (
-				73A109041A993A4000233F37 /* FoodContentViewController.h */,
-				73A109051A993A4000233F37 /* FoodContentViewController.m */,
-				73A108BB1A96FCAC00233F37 /* ViewController.h */,
-				73A108BC1A96FCAC00233F37 /* ViewController.m */,
-				73A108F01A991CA200233F37 /* ContentTVC.h */,
-				73A108F11A991CA200233F37 /* ContentTVC.m */,
-				73A108F31A991E5000233F37 /* RefrigeratorContentTVC.h */,
-				73A108F41A991E5000233F37 /* RefrigeratorContentTVC.m */,
-				73A108FE1A992A7600233F37 /* ImageViewController.h */,
-				73A108FF1A992A7600233F37 /* ImageViewController.m */,
-			);
-			name = Experiment;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,22 +273,14 @@
 			files = (
 				73A1091A1A9A836F00233F37 /* MostlyAddedTVC.m in Sources */,
 				73A109111A9A475300233F37 /* basicTVC.m in Sources */,
-				73A108BD1A96FCAC00233F37 /* ViewController.m in Sources */,
+				7379D2B71AA3CED8001B78C2 /* FoodCollection.m in Sources */,
 				73A108BA1A96FCAC00233F37 /* AppDelegate.m in Sources */,
-				73A108E91A98004D00233F37 /* FoodCollection.m in Sources */,
-				7364C3951A9C14000022B472 /* Model.xcdatamodeld in Sources */,
-				73A108E61A97F91E00233F37 /* AddFoodViewController.m in Sources */,
-				73A108F51A991E5000233F37 /* RefrigeratorContentTVC.m in Sources */,
-				73A109001A992A7600233F37 /* ImageViewController.m in Sources */,
 				73A109141A9A47C600233F37 /* MainTVC.m in Sources */,
+				7379D2BA1AA3CF9E001B78C2 /* Food.m in Sources */,
 				73A1090B1A9A32FD00233F37 /* TopNavigationControllerVC.m in Sources */,
-				73A108DF1A97809300233F37 /* Fridge.m in Sources */,
-				73A108F21A991CA200233F37 /* ContentTVC.m in Sources */,
-				73A109061A993A4000233F37 /* FoodContentViewController.m in Sources */,
-				73A108E31A9787F700233F37 /* Food.m in Sources */,
 				73A109171A9A4DEE00233F37 /* MultipleFoodTableViewCell.m in Sources */,
-				73A108FA1A9920C500233F37 /* FlickrFetcher.m in Sources */,
 				73A108B71A96FCAC00233F37 /* main.m in Sources */,
+				7379D2B11AA3B870001B78C2 /* FreshViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,19 +497,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		7364C3931A9C14000022B472 /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				7364C3941A9C14000022B472 /* Model.xcdatamodel */,
-			);
-			currentVersion = 7364C3941A9C14000022B472 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 73A108A91A96FCAC00233F37 /* Project object */;
 }
