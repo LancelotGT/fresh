@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import <RestKit/RestKit.h>
+#import "Food2.h"
 @interface AppDelegate ()
 
 @end
@@ -19,8 +20,77 @@
     
     // ...
     
+    
     // Override point for customization after application launch.
+    NSURL *baseURL = [NSURL URLWithString:@"http://52.11.84.131:8080"];
+    AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    //we want to work with JSON-Data
+    [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
+    
+    // Initialize RestKit
+    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+    objectManager.requestSerializationMIMEType = RKMIMETypeJSON;
+    NSURL *modelURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Fresh" ofType:@"momd"]];
+    
+    //Iniitalize CoreData with RestKit
+    NSManagedObjectModel *managedObjectModel = [[[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL] mutableCopy];
+    RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
+    NSError *error = nil;
+    
+    NSString *path = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"Fresh.sqlite"];
+    //NSLog(@"!!!!!!  %@", path);
+    
+    objectManager.managedObjectStore = managedObjectStore;
+    [objectManager.managedObjectStore addSQLitePersistentStoreAtPath:path fromSeedDatabaseAtPath:nil withConfiguration:nil options:nil error:&error];
+    [objectManager.managedObjectStore createManagedObjectContexts];
+    NSLog(@"done creating contexts.");
+    
+    RKEntityMapping *foodMapping = [RKEntityMapping mappingForEntityForName:@"Food2" inManagedObjectStore:managedObjectStore];
+    [foodMapping addAttributeMappingsFromDictionary:@{
+                                                      @"_id" : @"food_id",
+                                                      @"foodname" : @"foodname",
+                                                      @"add_time" : @"add_time",
+                                                      @"expire_period" : @"expire_period",
+                                                      @"store_place" : @"store_place",
+                                                      @"image_id":@"image_id",
+                                                      // server side: _id; ios side: object_id
+                                                      }];
+    
+    
+    // Register our mappings with the provider
+    RKResponseDescriptor *responseDescriptor_food = [RKResponseDescriptor responseDescriptorWithMapping:foodMapping
+                                                                                                 method:RKRequestMethodGET
+                                                                                            pathPattern:@"/api/food"
+                                                                                                keyPath:nil
+                                                                                            statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
+    [objectManager addResponseDescriptor:responseDescriptor_food];
+    
+    RKResponseDescriptor *responseDescriptor_store_place = [RKResponseDescriptor responseDescriptorWithMapping:foodMapping
+                                                                                                        method:RKRequestMethodGET
+                                                                                                   pathPattern:@"/api/food/store_place/:store_place"
+                                                                                                       keyPath:nil
+                                                                                                   statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
+    [objectManager addResponseDescriptor:responseDescriptor_store_place];
+    
+    // request descriptor
+    
+    RKRequestDescriptor *requestDescriptor_food = [RKRequestDescriptor requestDescriptorWithMapping:[foodMapping inverseMapping] objectClass:[Food2 class] rootKeyPath:nil method:RKRequestMethodPOST];
+    [objectManager addRequestDescriptor:requestDescriptor_food];
+    
+    RKRequestDescriptor *requestDescriptor_food_del = [RKRequestDescriptor requestDescriptorWithMapping:[foodMapping inverseMapping] objectClass:[Food2 class] rootKeyPath:nil method:RKRequestMethodDELETE];
+    [objectManager addRequestDescriptor:requestDescriptor_food_del];
+    
+    //
+    //    RKRequestDescriptor *requestDescriptor_store_place = [RKRequestDescriptor requestDescriptorWithMapping:[foodMapping inverseMapping] objectClass:[Food class] rootKeyPath:nil method:RKRequestMethodGET];
+    //    [objectManager addRequestDescriptor:requestDescriptor_store_place];
+    
+    NSLog(@"done creating descriptors.");
+    
+    
     return YES;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

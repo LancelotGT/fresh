@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2188D71E1ABB49F2008BBC4A /* Fresh.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2188D71C1ABB49F2008BBC4A /* Fresh.xcdatamodeld */; };
+		2188D7211ABB4B16008BBC4A /* Food2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2188D7201ABB4B16008BBC4A /* Food2.m */; };
+		2188D7241ABB5055008BBC4A /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2188D7231ABB5055008BBC4A /* TestViewController.m */; };
 		7379D2B11AA3B870001B78C2 /* FreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7379D2B01AA3B86F001B78C2 /* FreshViewController.m */; };
 		7379D2B71AA3CED8001B78C2 /* FoodCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7379D2B61AA3CED8001B78C2 /* FoodCollection.m */; };
 		7379D2BA1AA3CF9E001B78C2 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 7379D2B91AA3CF9E001B78C2 /* Food.m */; };
@@ -36,6 +39,11 @@
 
 /* Begin PBXFileReference section */
 		18E013DC775DA4BFFAABEA72 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2188D71D1ABB49F2008BBC4A /* Fresh.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fresh.xcdatamodel; sourceTree = "<group>"; };
+		2188D71F1ABB4B16008BBC4A /* Food2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food2.h; sourceTree = "<group>"; };
+		2188D7201ABB4B16008BBC4A /* Food2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food2.m; sourceTree = "<group>"; };
+		2188D7221ABB5055008BBC4A /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		2188D7231ABB5055008BBC4A /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		3F28DAFA7652B5679C86C63C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7379D2AF1AA3B86F001B78C2 /* FreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreshViewController.h; sourceTree = "<group>"; };
 		7379D2B01AA3B86F001B78C2 /* FreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshViewController.m; sourceTree = "<group>"; };
@@ -118,6 +126,13 @@
 			isa = PBXGroup;
 			children = (
 				73A108BE1A96FCAC00233F37 /* Main.storyboard */,
+				2188D71C1ABB49F2008BBC4A /* Fresh.xcdatamodeld */,
+				2188D71F1ABB4B16008BBC4A /* Food2.h */,
+				2188D7221ABB5055008BBC4A /* TestViewController.h */,
+				2188D7231ABB5055008BBC4A /* TestViewController.m */,
+				2188D7201ABB4B16008BBC4A /* Food2.m */,
+				73A108B81A96FCAC00233F37 /* AppDelegate.h */,
+				73A108B91A96FCAC00233F37 /* AppDelegate.m */,
 				73A1091B1A9A878400233F37 /* ViewControllers */,
 				73A108C31A96FCAC00233F37 /* LaunchScreen.xib */,
 				73A109071A9A30D400233F37 /* Images.xcassets */,
@@ -130,8 +145,6 @@
 		73A108B41A96FCAC00233F37 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				73A108B81A96FCAC00233F37 /* AppDelegate.h */,
-				73A108B91A96FCAC00233F37 /* AppDelegate.m */,
 				73A108B51A96FCAC00233F37 /* Info.plist */,
 				73A108B61A96FCAC00233F37 /* main.m */,
 			);
@@ -330,6 +343,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2188D7211ABB4B16008BBC4A /* Food2.m in Sources */,
+				2188D7241ABB5055008BBC4A /* TestViewController.m in Sources */,
 				73A1091A1A9A836F00233F37 /* MostlyAddedTVC.m in Sources */,
 				73A109111A9A475300233F37 /* basicTVC.m in Sources */,
 				7379D2B71AA3CED8001B78C2 /* FoodCollection.m in Sources */,
@@ -337,6 +352,7 @@
 				73A109141A9A47C600233F37 /* MainTVC.m in Sources */,
 				7379D2BA1AA3CF9E001B78C2 /* Food.m in Sources */,
 				73A1090B1A9A32FD00233F37 /* TopNavigationControllerVC.m in Sources */,
+				2188D71E1ABB49F2008BBC4A /* Fresh.xcdatamodeld in Sources */,
 				73A109171A9A4DEE00233F37 /* MultipleFoodTableViewCell.m in Sources */,
 				73A108B71A96FCAC00233F37 /* main.m in Sources */,
 				7379D2B11AA3B870001B78C2 /* FreshViewController.m in Sources */,
@@ -558,6 +574,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2188D71C1ABB49F2008BBC4A /* Fresh.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2188D71D1ABB49F2008BBC4A /* Fresh.xcdatamodel */,
+			);
+			currentVersion = 2188D71D1ABB49F2008BBC4A /* Fresh.xcdatamodel */;
+			path = Fresh.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 73A108A91A96FCAC00233F37 /* Project object */;
 }
