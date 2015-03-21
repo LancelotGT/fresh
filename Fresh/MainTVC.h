@@ -8,6 +8,6 @@
 
 #import "basicTVC.h"
 
-@interface MainTVC : basicTVC <UIActionSheetDelegate>
+@interface MainTVC : basicTVC <UIActionSheetDelegate, UIAlertViewDelegate>
 
 @end

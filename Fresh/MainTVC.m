@@ -8,58 +8,50 @@
 
 #import "MainTVC.h"
 #import "MultipleFoodTableViewCell.h"
-#import "FoodCollection.h"
-#import "Food.h"
+#import "Food2.h"
+#import <RestKit/RestKit.h>
 
 @interface MainTVC ()
-@property (strong, nonatomic) FoodCollection  *refrigeratorFoodCollection;
-@property (strong, nonatomic) FoodCollection *freezerFoodCollection;
-@property (strong, nonatomic) FoodCollection *displayFoodCollection;
-
+@property (strong, nonatomic) NSMutableArray *fridgeFoodCollection;
+@property (strong, nonatomic) NSMutableArray *freezerFoodCollection;
+@property (strong, nonatomic) NSMutableArray *displayFoodCollection;
+@property (strong, nonatomic) NSMutableArray *foodInFridgeAddedDates;
+@property (strong, nonatomic) NSMutableArray *foodInFreezerAddedDates;
 @end
 
 @implementation MainTVC
 
--(FoodCollection *)refrigeratorFoodCollection {
-    if (!_refrigeratorFoodCollection) _refrigeratorFoodCollection = [[FoodCollection alloc]init];
-    return _refrigeratorFoodCollection;
+-(NSMutableArray *)foodInFridgeAddedDates {
+    if (!_foodInFridgeAddedDates) _foodInFridgeAddedDates = [[NSMutableArray alloc] init];
+    return _foodInFridgeAddedDates;
+}
+-(NSMutableArray *)foodInFreezerAddedDates {
+    if (!_foodInFreezerAddedDates) _foodInFreezerAddedDates = [[NSMutableArray alloc] init];
+    return _foodInFreezerAddedDates;
 }
 
--(FoodCollection *)freezerFoodCollection {
-    if (!_freezerFoodCollection) _freezerFoodCollection = [[FoodCollection alloc]init];
+
+-(NSMutableArray *)fridgeFoodCollection {
+    if (!_fridgeFoodCollection) _fridgeFoodCollection = [[NSMutableArray alloc]init];
+    return _fridgeFoodCollection;
+}
+
+-(NSMutableArray *)freezerFoodCollection {
+    if (!_freezerFoodCollection) _freezerFoodCollection = [[NSMutableArray alloc]init];
     return _freezerFoodCollection;
 }
 
--(FoodCollection *)displayFoodCollection  {
-    if (!_displayFoodCollection) _displayFoodCollection = [[FoodCollection alloc]init];
+-(NSMutableArray *)displayFoodCollection  {
+    if (!_displayFoodCollection) _displayFoodCollection = [[NSMutableArray alloc]init];
     return _displayFoodCollection;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    Food *food1 = [[Food alloc] init];
-    food1.type = @"apple";
-    food1.expTime = @"10";
-    food1.foodID = @"1";
-    Food *food2 = [[Food alloc] init];
-    food2.type = @"muffin";
-    food2.expTime = @"10";
-    food2.foodID = @"1";
-    [self.refrigeratorFoodCollection addFood:food1];
-    [self.refrigeratorFoodCollection addFood:food2];
-    self.displayFoodCollection = self.refrigeratorFoodCollection;
-    
-    Food *food3 = [[Food alloc] init];
-    food3.type = @"muffin";
-    food3.expTime = @"10";
-    food3.foodID = @"1";
-    Food *food4 = [[Food alloc] init];
-    food4.type = @"egg";
-    food4.expTime = @"10";
-    food4.foodID = @"1";
-    [self.freezerFoodCollection addFood:food3];
-    [self.freezerFoodCollection addFood:food4];
+    [self loadFood:@"fridge"];
+    [self loadFood:@"freezer"];
+    self.displayFoodCollection = self.fridgeFoodCollection;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,15 +61,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 2;
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Return the number of rows in the section.
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MultipleFoodTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Food Cell" forIndexPath:indexPath];
-    
+    int startIndex = indexPath.row * 4;
     // Configure the cell...
-    cell.imageView1.image = [UIImage imageNamed:[self.displayFoodCollection FoodAtIndex:0].type];
-    cell.imageView2.image = [UIImage imageNamed:[self.displayFoodCollection FoodAtIndex:1].type];
+    if ([self.displayFoodCollection count] == 0) {
+        if ([self.fridgeFoodCollection count] > 0) {
+            for (int i = 0; i < 4; i++) {
+                [self displayFoodWithIndex:startIndex + i withPart:self.fridgeFoodCollection withCell:cell];
+            }
+        }
+    }
+    else {
+        for (int i = 0; i < 4; i++) {
+            [self displayFoodWithIndex:startIndex + i withPart:self.displayFoodCollection withCell:cell];
+        }
+    }
     
     return cell;
 }
@@ -121,13 +128,149 @@
     NSInteger selectedSegment = sender.selectedSegmentIndex;
     
     if (selectedSegment == 0) {
-        self.displayFoodCollection = self.refrigeratorFoodCollection;
+        self.displayFoodCollection = self.fridgeFoodCollection;
     }
     else {
         self.displayFoodCollection = self.freezerFoodCollection;
     }
     
     [self.tableView reloadData];
+}
+
+- (void)loadFood: (NSString *)partName{
+    
+    NSMutableString *myPath = [[NSMutableString alloc] initWithString:@"/api/food/store_place/"];
+    [myPath appendString:partName];
+    
+    [[RKObjectManager sharedManager] getObjectsAtPath:myPath
+                                           parameters:nil
+                                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                                  NSDateFormatter* dateFormatter =[[NSDateFormatter alloc]init];
+                                                  dateFormatter.dateFormat = @"YYYY-MM-dd";
+                                                  if ([partName  isEqual: @"fridge"]) {
+                                                      
+                                                      self.fridgeFoodCollection = mappingResult.array;
+                                                      [self.fridgeFoodCollection sortUsingComparator:^NSComparisonResult(Food2* b,Food2* a){
+                                                          return[a.add_time compare:b.add_time];
+                                                      }];
+                                                      
+                                                      for( Food2* food in self.fridgeFoodCollection){
+                                                          BOOL hasDate = NO;
+                                                          NSString* dateString = [dateFormatter stringFromDate:food.add_time];
+                                                          for (NSString* str in self.foodInFridgeAddedDates) {
+                                                              if([str isEqualToString: dateString]){
+                                                                  hasDate = YES;
+                                                              }
+                                                        
+                                                          }
+                                                          if(hasDate == NO)
+                                                              [self.foodInFridgeAddedDates addObject:dateString];
+                                                          
+                                                      }
+                                                      
+                                                      for(NSString *str2 in self.foodInFridgeAddedDates){
+                                                          NSLog(@"In fridge, the date is %@", str2);
+                                                      }
+                                                      
+                                                  }else {
+                                                      self.freezerFoodCollection = mappingResult.array;
+                                                      [self.freezerFoodCollection sortUsingComparator:^NSComparisonResult(Food2* b,Food2* a){
+                                                          return[a.add_time compare:b.add_time];
+                                                      }];
+                                                      for( Food2* food in self.freezerFoodCollection){
+                                                          BOOL hasDate = NO;
+                                                          NSString* dateString = [dateFormatter stringFromDate:food.add_time];
+                                                          for (NSString* str in self.foodInFreezerAddedDates) {
+                                                              if([str isEqualToString: dateString]){
+                                                                  hasDate = YES;
+                                                              }
+                                                          }
+                                                          if(hasDate == NO)
+                                                              [self.foodInFreezerAddedDates addObject:dateString];
+                                                     }
+                                                      
+                                                      
+                                                  }
+                                                  
+                                                  for (Food2* food in self.freezerFoodCollection) {
+                                                      NSLog(food.foodname);
+                                                  }
+                                                  [self.tableView reloadData];
+                                              }
+                                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                  NSLog(@"error occurred': %@", error);
+                                              }];
+}
+
+- (void) displayFoodWithIndex:(int) index withPart:(NSMutableArray *) foodCollection withCell:(MultipleFoodTableViewCell *) cell{
+    if (index <= [foodCollection count] - 1) {
+        Food2* food = [foodCollection objectAtIndex:index];
+        if (index % 4 == 0) {
+            [cell.button1 setImage:[UIImage imageNamed:food.foodname] forState:UIControlStateNormal];
+            cell.button1.tag = index;
+            [cell.button1 addTarget:self action:@selector(foodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        }
+        else if (index % 4 == 1) {
+            [cell.button2 setImage:[UIImage imageNamed:food.foodname] forState:UIControlStateNormal];
+            cell.button2.tag = index;
+            [cell.button2 addTarget:self action:@selector(foodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        }
+        else if (index % 4 == 2) {
+            [cell.button3 setImage:[UIImage imageNamed:food.foodname] forState:UIControlStateNormal];
+            cell.button3.tag = index;
+            [cell.button3 addTarget:self action:@selector(foodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        }
+        else {
+            [cell.button4 setImage:[UIImage imageNamed:food.foodname] forState:UIControlStateNormal];
+            cell.button4.tag = index;
+            [cell.button4 addTarget:self action:@selector(foodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        }
+    } else {
+        if (index % 4 == 0) [cell.button1 setImage:nil forState:UIControlStateNormal];
+        else if (index % 4 == 1) [cell.button2 setImage:nil forState:UIControlStateNormal];
+        else if (index % 4 == 2) [cell.button3 setImage:nil forState:UIControlStateNormal];
+        else [cell.button4 setImage:nil forState:UIControlStateNormal];
+    }
+}
+
+- (void) foodButtonPressed:(UIButton *)sender{
+    
+    Food2 *food;
+    if ([self.displayFoodCollection count] > 0) {
+        food = [self.displayFoodCollection objectAtIndex:sender.tag];
+    } else {
+        food = [self.fridgeFoodCollection objectAtIndex:sender.tag];
+    }
+    
+    
+    NSInteger daysLeft = [self calculateLeftDays:food];
+    
+    NSString *output = [NSString stringWithFormat:@"%ld days of expiration period.", daysLeft];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Food Information"
+                                                    message:output
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
+- (NSInteger)calculateLeftDays:(Food2 *) food {
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDate* tempDate = food.add_time;
+    NSDate *currentDate = [NSDate date];
+    NSInteger daysToAdd = [food.expire_period integerValue];
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    [comps setMonth:0];
+    [comps setDay:daysToAdd];
+    NSDate *expireDate = [gregorian dateByAddingComponents:comps toDate:tempDate  options:0];
+    // NSLog(@"add time: %@ ..., expire time: %@ ...,current time: %@ ...", tempDate,expireDate,currentDate);
+    
+   // NSLog(@"expireDate: %@ ...", expireDate);
+    NSDateComponents *compLeft = [gregorian components:NSDayCalendarUnit fromDate:currentDate toDate:expireDate options:0];
+    //NSLog(@"%ld days left", [compLeft day]);
+    //NSString * output = [NSString stringWithFormat:@"%ld days left",[compLeft day]];
+    return [compLeft day]+1;
 }
 
 @end

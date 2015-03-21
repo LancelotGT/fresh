@@ -22,7 +22,7 @@
     
     
     // Override point for customization after application launch.
-    NSURL *baseURL = [NSURL URLWithString:@"http://52.11.84.131:8080"];
+    NSURL *baseURL = [NSURL URLWithString:@"http://52.11.25.130:8080"];
     AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
     //we want to work with JSON-Data
     [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];

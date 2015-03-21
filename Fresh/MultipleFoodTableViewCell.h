@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MultipleFoodTableViewCell : UITableViewCell
-@property (nonatomic, strong) UIImageView *imageView1;
-@property (nonatomic, strong) UIImageView *imageView2;
-@property (nonatomic, strong) UIImageView *imageView3;
-@property (nonatomic, strong) UIImageView *imageView4;
+@property (nonatomic, strong) UIButton *button1;
+@property (nonatomic, strong) UIButton *button2;
+@property (nonatomic, strong) UIButton *button3;
+@property (nonatomic, strong) UIButton *button4;
 @end

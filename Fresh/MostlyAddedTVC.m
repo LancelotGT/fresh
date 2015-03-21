@@ -34,11 +34,11 @@
     MultipleFoodTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Mostly Added Food Cell" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.imageView1.image = [UIImage imageNamed:@"egg"];
-    cell.imageView2.image = [UIImage imageNamed:@"apple"];
-    cell.imageView3.image = [UIImage imageNamed:@"milk"];
-    cell.imageView4.image = [UIImage imageNamed:@"muffin"];
-    
+//    cell.imageView1.image = [UIImage imageNamed:@"egg"];
+//    cell.imageView2.image = [UIImage imageNamed:@"apple"];
+//    cell.imageView3.image = [UIImage imageNamed:@"milk"];
+//    cell.imageView4.image = [UIImage imageNamed:@"muffin"];
+//    
     return cell;
 }
 
