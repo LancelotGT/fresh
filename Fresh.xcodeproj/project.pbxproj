@@ -11,6 +11,7 @@
 		2188D7211ABB4B16008BBC4A /* Food2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2188D7201ABB4B16008BBC4A /* Food2.m */; };
 		2188D7241ABB5055008BBC4A /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2188D7231ABB5055008BBC4A /* TestViewController.m */; };
 		736793461ABD2F3300B1E9B6 /* CategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 736793451ABD2F3300B1E9B6 /* CategoryTVC.m */; };
+		736793491ABE35DC00B1E9B6 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 736793481ABE35DC00B1E9B6 /* Constants.m */; };
 		7379D2B11AA3B870001B78C2 /* FreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7379D2B01AA3B86F001B78C2 /* FreshViewController.m */; };
 		7379D2B71AA3CED8001B78C2 /* FoodCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7379D2B61AA3CED8001B78C2 /* FoodCollection.m */; };
 		7379D2BA1AA3CF9E001B78C2 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 7379D2B91AA3CF9E001B78C2 /* Food.m */; };
@@ -48,6 +49,8 @@
 		3F28DAFA7652B5679C86C63C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		736793441ABD2F3300B1E9B6 /* CategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTVC.h; sourceTree = "<group>"; };
 		736793451ABD2F3300B1E9B6 /* CategoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTVC.m; sourceTree = "<group>"; };
+		736793471ABE35DC00B1E9B6 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		736793481ABE35DC00B1E9B6 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		7379D2AF1AA3B86F001B78C2 /* FreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreshViewController.h; sourceTree = "<group>"; };
 		7379D2B01AA3B86F001B78C2 /* FreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshViewController.m; sourceTree = "<group>"; };
 		7379D2B51AA3CED8001B78C2 /* FoodCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodCollection.h; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 		73A108E01A9780A000233F37 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				736793471ABE35DC00B1E9B6 /* Constants.h */,
+				736793481ABE35DC00B1E9B6 /* Constants.m */,
 				7379D2B81AA3CF9E001B78C2 /* Food.h */,
 				7379D2B91AA3CF9E001B78C2 /* Food.m */,
 				7379D2B51AA3CED8001B78C2 /* FoodCollection.h */,
@@ -353,6 +358,7 @@
 				73A1091A1A9A836F00233F37 /* MostlyAddedTVC.m in Sources */,
 				73A109111A9A475300233F37 /* basicTVC.m in Sources */,
 				7379D2B71AA3CED8001B78C2 /* FoodCollection.m in Sources */,
+				736793491ABE35DC00B1E9B6 /* Constants.m in Sources */,
 				73A108BA1A96FCAC00233F37 /* AppDelegate.m in Sources */,
 				73A109141A9A47C600233F37 /* MainTVC.m in Sources */,
 				736793461ABD2F3300B1E9B6 /* CategoryTVC.m in Sources */,

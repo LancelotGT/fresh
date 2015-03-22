@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CategoryTVC : UITableViewController
+@interface CategoryTVC : UITableViewController <UIAlertViewDelegate, UIPickerViewDelegate>
 
 @end
