@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CategoryTVC : UITableViewController <UIAlertViewDelegate, UIPickerViewDelegate>
-
+@property(nonatomic) int addToSelectedIndex;
+@property(nonatomic) int addFromSelectedIndex;
 @end

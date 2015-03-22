@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSMutableArray *freezerFoodCollection;
 @property (strong, nonatomic) NSMutableArray *foodInFridgeAddedDates;
 @property (strong, nonatomic) NSMutableArray *foodInFreezerAddedDates;
+@property(nonatomic, strong) NSString *lastChosenFoodId;
 @end
 
 @implementation MainTVC
@@ -47,6 +48,13 @@
     [self loadFood:@"freezer"];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self loadFood:@"fridge"];
+    [self loadFood:@"freezer"];
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -67,12 +75,22 @@
     // Return the number of rows in the section.
     if (self.segmentedControlState.selectedSegmentIndex == 0) {
         if ([self.fridgeFoodCollection count] > 0) {
-            return [[self findFoodsInOneDay:self.fridgeFoodCollection withDate:[self.foodInFridgeAddedDates objectAtIndex:section]] count] / 4 + 1;
+            int count = (int)[[self findFoodsInOneDay:self.fridgeFoodCollection withDate:[self.foodInFridgeAddedDates objectAtIndex:section]] count];
+            if (count % 4 == 0) {
+                return count / 4;
+            } else {
+                return count / 4 + 1;
+            }
         }
         return 1;
     } else {
         if ([self.fridgeFoodCollection count] > 0) {
-            return [[self findFoodsInOneDay:self.freezerFoodCollection withDate:[self.foodInFreezerAddedDates objectAtIndex:section]] count] / 4 + 1;
+            int count = (int) [[self findFoodsInOneDay:self.freezerFoodCollection withDate:[self.foodInFreezerAddedDates objectAtIndex:section]] count];
+            if (count % 4 == 0) {
+                return count / 4;
+            } else {
+                return count / 4 + 1;
+            }
         }
         return 1;
     }
@@ -184,13 +202,12 @@
                                                       [self.fridgeFoodCollection sortUsingComparator:^NSComparisonResult(Food2* b,Food2* a){
                                                           return[a.add_time compare:b.add_time];
                                                       }];
-                                                      
+                                                      self.foodInFridgeAddedDates  = nil;
                                                       for( Food2* food in self.fridgeFoodCollection){
                                                          
                                                           BOOL hasDate = NO;
                                                           NSString* dateString = [dateFormatter stringFromDate:food.add_time];
-//                                                          NSLog(@"In fridge, the date is %@", food.add_time);
-//                                                           NSLog(@"           date string is %@", dateString);
+
 
                                                           for (NSString* str in self.foodInFridgeAddedDates) {
                                                               if([str isEqualToString: dateString]){
@@ -205,6 +222,7 @@
                                                       [self.freezerFoodCollection sortUsingComparator:^NSComparisonResult(Food2* b,Food2* a){
                                                           return[a.add_time compare:b.add_time];
                                                       }];
+                                                      self.foodInFreezerAddedDates  = nil;
                                                       for( Food2* food in self.freezerFoodCollection){
                                                           BOOL hasDate = NO;
                                                           NSString* dateString = [dateFormatter stringFromDate:food.add_time];
@@ -257,33 +275,70 @@
             [cell.button4 addTarget:self action:@selector(foodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         }
     } else {
-        if (index % 4 == 0) [cell.button1 setImage:nil forState:UIControlStateNormal];
-        else if (index % 4 == 1) [cell.button2 setImage:nil forState:UIControlStateNormal];
-        else if (index % 4 == 2) [cell.button3 setImage:nil forState:UIControlStateNormal];
-        else [cell.button4 setImage:nil forState:UIControlStateNormal];
+        if (index % 4 == 0) {
+            [cell.button1 setImage:nil forState:UIControlStateNormal];
+            cell.button1.tag = 10000;
+        }
+        else if (index % 4 == 1) {
+            [cell.button2 setImage:nil forState:UIControlStateNormal];
+            cell.button2.tag = 10000;
+        }
+        else if (index % 4 == 2) {
+            [cell.button3 setImage:nil forState:UIControlStateNormal];
+            cell.button3.tag = 10000;
+        }
+        else {
+            [cell.button4 setImage:nil forState:UIControlStateNormal];
+            cell.button4.tag = 10000;
+        }
     }
 }
 
 - (void) foodButtonPressed:(UIButton *)sender{
-    
     Food2 *food;
     if (self.segmentedControlState.selectedSegmentIndex == 0) {
+        if (sender.tag >= [self.fridgeFoodCollection count]) return;
         food = [self.fridgeFoodCollection objectAtIndex:sender.tag];
     } else {
+        if (sender.tag >= [self.freezerFoodCollection count]) return;
         food = [self.freezerFoodCollection objectAtIndex:sender.tag];
     }
-    
-    
+    self.lastChosenFoodId = food.food_id;
     NSInteger daysLeft = [self calculateLeftDays:food];
     
-    NSString *output = [NSString stringWithFormat:@"%ld days of expiration period.", daysLeft];
+    NSString *output;
+    if (daysLeft >= 0) output = [NSString stringWithFormat:@"%ld days left.", daysLeft];
+    else output = [NSString stringWithFormat:@"This food has already expired."];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Food Information"
                                                     message:output
                                                    delegate:self
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
+    [alert addButtonWithTitle:@"Delete"];
     [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        
+        //Event *selectedEvent = self.events[indexPath.row];
+        NSString* path = [@"/api/food/food_id/" stringByAppendingString:self.lastChosenFoodId];
+        NSLog(@"%@", path);
+        [[RKObjectManager sharedManager] deleteObject:NULL
+                                                 path:path
+                                           parameters:nil
+                                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+
+                                                  [self loadFood:@"fridge"];
+                                                  [self loadFood:@"freezer"];
+                                                  [self.tableView reloadData];
+                                                  NSLog(@"Successfully deleted");
+                                              }
+                                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                  NSLog(@"error occurred': %@", error);
+                                              }];
+    }
 }
 
 - (NSInteger)calculateLeftDays:(Food2 *) food {

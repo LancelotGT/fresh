@@ -12,6 +12,8 @@
 		2188D7241ABB5055008BBC4A /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2188D7231ABB5055008BBC4A /* TestViewController.m */; };
 		736793461ABD2F3300B1E9B6 /* CategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 736793451ABD2F3300B1E9B6 /* CategoryTVC.m */; };
 		736793491ABE35DC00B1E9B6 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 736793481ABE35DC00B1E9B6 /* Constants.m */; };
+		7367934C1ABE659A00B1E9B6 /* AddFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7367934B1ABE659A00B1E9B6 /* AddFoodViewController.m */; };
+		7367934F1ABE6F8F00B1E9B6 /* AddFoodViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7367934E1ABE6F8F00B1E9B6 /* AddFoodViewController2.m */; };
 		7379D2B11AA3B870001B78C2 /* FreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7379D2B01AA3B86F001B78C2 /* FreshViewController.m */; };
 		7379D2B71AA3CED8001B78C2 /* FoodCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7379D2B61AA3CED8001B78C2 /* FoodCollection.m */; };
 		7379D2BA1AA3CF9E001B78C2 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 7379D2B91AA3CF9E001B78C2 /* Food.m */; };
@@ -51,6 +53,10 @@
 		736793451ABD2F3300B1E9B6 /* CategoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTVC.m; sourceTree = "<group>"; };
 		736793471ABE35DC00B1E9B6 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		736793481ABE35DC00B1E9B6 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		7367934A1ABE659A00B1E9B6 /* AddFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFoodViewController.h; sourceTree = "<group>"; };
+		7367934B1ABE659A00B1E9B6 /* AddFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFoodViewController.m; sourceTree = "<group>"; };
+		7367934D1ABE6F8F00B1E9B6 /* AddFoodViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFoodViewController2.h; sourceTree = "<group>"; };
+		7367934E1ABE6F8F00B1E9B6 /* AddFoodViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFoodViewController2.m; sourceTree = "<group>"; };
 		7379D2AF1AA3B86F001B78C2 /* FreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreshViewController.h; sourceTree = "<group>"; };
 		7379D2B01AA3B86F001B78C2 /* FreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshViewController.m; sourceTree = "<group>"; };
 		7379D2B51AA3CED8001B78C2 /* FoodCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodCollection.h; sourceTree = "<group>"; };
@@ -190,6 +196,10 @@
 		73A1091B1A9A878400233F37 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7367934A1ABE659A00B1E9B6 /* AddFoodViewController.h */,
+				7367934B1ABE659A00B1E9B6 /* AddFoodViewController.m */,
+				7367934D1ABE6F8F00B1E9B6 /* AddFoodViewController2.h */,
+				7367934E1ABE6F8F00B1E9B6 /* AddFoodViewController2.m */,
 				73A109181A9A836F00233F37 /* MostlyAddedTVC.h */,
 				7379D2AF1AA3B86F001B78C2 /* FreshViewController.h */,
 				7379D2B01AA3B86F001B78C2 /* FreshViewController.m */,
@@ -355,6 +365,7 @@
 			files = (
 				2188D7211ABB4B16008BBC4A /* Food2.m in Sources */,
 				2188D7241ABB5055008BBC4A /* TestViewController.m in Sources */,
+				7367934C1ABE659A00B1E9B6 /* AddFoodViewController.m in Sources */,
 				73A1091A1A9A836F00233F37 /* MostlyAddedTVC.m in Sources */,
 				73A109111A9A475300233F37 /* basicTVC.m in Sources */,
 				7379D2B71AA3CED8001B78C2 /* FoodCollection.m in Sources */,
@@ -365,6 +376,7 @@
 				7379D2BA1AA3CF9E001B78C2 /* Food.m in Sources */,
 				73A1090B1A9A32FD00233F37 /* TopNavigationControllerVC.m in Sources */,
 				2188D71E1ABB49F2008BBC4A /* Fresh.xcdatamodeld in Sources */,
+				7367934F1ABE6F8F00B1E9B6 /* AddFoodViewController2.m in Sources */,
 				73A109171A9A4DEE00233F37 /* MultipleFoodTableViewCell.m in Sources */,
 				73A108B71A96FCAC00233F37 /* main.m in Sources */,
 				7379D2B11AA3B870001B78C2 /* FreshViewController.m in Sources */,
