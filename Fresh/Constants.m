@@ -11,7 +11,7 @@
 @implementation Constants
 
 + (NSArray *) ArrayOfFoodName {
-    return @[@"onion", @"broccoli", @"carrot", @"tomato", @"cucumber", @"lettuce", @"bean", @"red pepper", @"cabbage", @"cauliflower", @"pumpkin", @"apple", @"pear", @"honey peach", @"milk", @"egg", @"potato", @"muffin", @"bread"];
+    return @[@"onion", @"broccoli", @"carrot", @"tomato", @"cucumber", @"lettuce", @"beans", @"chillies", @"cabbage", @"cauliflower", @"pumpkin", @"apple", @"pear", @"kiwi", @"milk", @"egg", @"potatoes", @"cupcake", @"bread"];
 }
 
 + (NSArray *) ArrayOfFoodExpirePeriod {

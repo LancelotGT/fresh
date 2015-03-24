@@ -45,6 +45,7 @@
                                 <action selector="SegmentControlTouched:" destination="I8k-Mi-Umu" eventType="valueChanged" id="omn-3O-eoJ"/>
                             </connections>
                         </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" image="rsz_edit" id="ZSf-KW-Etv"/>
                     </navigationItem>
                     <connections>
                         <outlet property="segmentedControlState" destination="eCc-nu-Ar3" id="kxQ-Z8-feo"/>
@@ -399,6 +400,7 @@
     <resources>
         <image name="add_food_button" width="40" height="40"/>
         <image name="apple" width="333" height="333"/>
+        <image name="rsz_edit" width="40" height="40"/>
     </resources>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

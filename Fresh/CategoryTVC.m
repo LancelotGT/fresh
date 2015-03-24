@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UITextField *userInputField;
 @property(nonatomic, strong) Food2 * foodToPost;
 @property(nonatomic, strong) NSString *lastChosenFoodName;
+@property(nonatomic, strong) NSNumber *lastChosenFoodIndex;
 @end
 
 @implementation CategoryTVC
@@ -91,11 +92,11 @@
                 [cell.button2 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
                 cell.button2.tag = 5;
                 
-                [cell.button3 setImage:[UIImage imageNamed:@"bean"] forState:UIControlStateNormal];
+                [cell.button3 setImage:[UIImage imageNamed:@"beans"] forState:UIControlStateNormal];
                 [cell.button3 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
                 cell.button3.tag = 6;
                 
-                [cell.button4 setImage:[UIImage imageNamed:@"red pepper"] forState:UIControlStateNormal];
+                [cell.button4 setImage:[UIImage imageNamed:@"chillies"] forState:UIControlStateNormal];
                 [cell.button4 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
                 cell.button4.tag = 7;
             } else if (indexPath.row == 2) {
@@ -121,7 +122,7 @@
                 [cell.button2 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
                 cell.button2.tag = 12;
                 
-                [cell.button3 setImage:[UIImage imageNamed:@"honey peach"] forState:UIControlStateNormal];
+                [cell.button3 setImage:[UIImage imageNamed:@"kiwi"] forState:UIControlStateNormal];
                 [cell.button3 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
                 cell.button3.tag = 13;
             }
@@ -135,11 +136,11 @@
                 [cell.button2 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
                 cell.button2.tag = 15;
                 
-                [cell.button3 setImage:[UIImage imageNamed:@"potato"] forState:UIControlStateNormal];
+                [cell.button3 setImage:[UIImage imageNamed:@"potatoes"] forState:UIControlStateNormal];
                 [cell.button3 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
                 cell.button3.tag = 16;
                 
-                [cell.button4 setImage:[UIImage imageNamed:@"muffin"] forState:UIControlStateNormal];
+                [cell.button4 setImage:[UIImage imageNamed:@"cupcake"] forState:UIControlStateNormal];
                 [cell.button4 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
                 cell.button4.tag = 17;
             } else if(indexPath.row == 1) {
@@ -159,11 +160,11 @@
                 [cell.button2 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
                 cell.button2.tag = 15;
                 
-                [cell.button3 setImage:[UIImage imageNamed:@"potato"] forState:UIControlStateNormal];
+                [cell.button3 setImage:[UIImage imageNamed:@"potatoes"] forState:UIControlStateNormal];
                 [cell.button3 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
                 cell.button3.tag = 16;
                 
-                [cell.button4 setImage:[UIImage imageNamed:@"muffin"] forState:UIControlStateNormal];
+                [cell.button4 setImage:[UIImage imageNamed:@"cupcake"] forState:UIControlStateNormal];
                 [cell.button4 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
                 cell.button4.tag = 17;
             } else {
@@ -179,6 +180,7 @@
 
 - (void) addFoodButtonPressed: (UIButton *)sender {
     self.lastChosenFoodName = [[Constants ArrayOfFoodName] objectAtIndex:sender.tag];
+    self.lastChosenFoodIndex = [[Constants ArrayOfFoodExpirePeriod] objectAtIndex:sender.tag];
 
     NSInteger t = (NSInteger) [[Constants ArrayOfFoodExpirePeriod] objectAtIndex:sender.tag];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Food Information"
@@ -208,9 +210,8 @@
         NSString *userInput = self.userInputField.text;
         NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
         f.numberStyle = NSNumberFormatterDecimalStyle;
-        NSNumber *number = [f numberFromString:userInput];
-        
-        
+        NSNumber *number = self.lastChosenFoodIndex;
+        if (![userInput  isEqual: @""]) number = [f numberFromString:userInput];
         NSDate * today = [NSDate date];
         self.foodToPost.foodname = self.lastChosenFoodName;
         if (self.addToSelectedIndex == 0) self.foodToPost.store_place = @"fridge";
