@@ -235,9 +235,9 @@
                                                               [self.foodInFreezerAddedDates addObject:dateString];
                                                      }
                                                   }
-                                                  for (Food2* food in self.freezerFoodCollection) {
-                                                      NSLog(food.foodname);
-                                                  }
+//                                                  for (Food2* food in self.freezerFoodCollection) {
+//                                                      NSLog(food.foodname);
+//                                                  }
                                                   [self.tableView reloadData];
                                               }
                                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
@@ -323,8 +323,21 @@
     if (buttonIndex == 1) {
         
         //Event *selectedEvent = self.events[indexPath.row];
+        //cancel that notification if the food is deleted
+        NSArray *notifs = [UIApplication sharedApplication].scheduledLocalNotifications;
+        NSLog(@"Number of notification: %lu", (unsigned long)[notifs count]);
+//        for (UILocalNotification *notif in notifs) {
+//            NSString *foodNameToDelete = [notif.userInfo objectForKey:self.lastChosenFoodId];
+//            NSLog(@"Food Name: %@, Food ID: %@", foodNameToDelete, self.lastChosenFoodId);
+//            if (foodNameToDelete) {
+//                [[UIApplication sharedApplication] cancelLocalNotification:notif];
+//            }
+//        }
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+        
         NSString* path = [@"/api/food/food_id/" stringByAppendingString:self.lastChosenFoodId];
-        NSLog(@"%@", path);
+        //NSLog(@"%@", path);
         [[RKObjectManager sharedManager] deleteObject:NULL
                                                  path:path
                                            parameters:nil

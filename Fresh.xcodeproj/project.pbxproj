@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		210CB61F1AC7A3CD00F3B40F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210CB61E1AC7A3CC00F3B40F /* FBSDKCoreKit.framework */; };
 		2188D71E1ABB49F2008BBC4A /* Fresh.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2188D71C1ABB49F2008BBC4A /* Fresh.xcdatamodeld */; };
 		2188D7211ABB4B16008BBC4A /* Food2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2188D7201ABB4B16008BBC4A /* Food2.m */; };
 		2188D7241ABB5055008BBC4A /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2188D7231ABB5055008BBC4A /* TestViewController.m */; };
+		733D181A1AC7B1C000C3D7B3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733D18181AC7B1C000C3D7B3 /* FBSDKCoreKit.framework */; };
+		733D181B1AC7B1C000C3D7B3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733D18191AC7B1C000C3D7B3 /* FBSDKLoginKit.framework */; };
+		733D181E1AC7B46300C3D7B3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 733D181D1AC7B46300C3D7B3 /* LoginViewController.m */; };
 		736793461ABD2F3300B1E9B6 /* CategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 736793451ABD2F3300B1E9B6 /* CategoryTVC.m */; };
 		736793491ABE35DC00B1E9B6 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 736793481ABE35DC00B1E9B6 /* Constants.m */; };
 		7367934C1ABE659A00B1E9B6 /* AddFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7367934B1ABE659A00B1E9B6 /* AddFoodViewController.m */; };
@@ -44,13 +46,16 @@
 
 /* Begin PBXFileReference section */
 		18E013DC775DA4BFFAABEA72 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		210CB61E1AC7A3CC00F3B40F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		2188D71D1ABB49F2008BBC4A /* Fresh.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fresh.xcdatamodel; sourceTree = "<group>"; };
 		2188D71F1ABB4B16008BBC4A /* Food2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food2.h; sourceTree = "<group>"; };
 		2188D7201ABB4B16008BBC4A /* Food2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food2.m; sourceTree = "<group>"; };
 		2188D7221ABB5055008BBC4A /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		2188D7231ABB5055008BBC4A /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		3F28DAFA7652B5679C86C63C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		733D18181AC7B1C000C3D7B3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		733D18191AC7B1C000C3D7B3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		733D181C1AC7B46300C3D7B3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		733D181D1AC7B46300C3D7B3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		736793441ABD2F3300B1E9B6 /* CategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTVC.h; sourceTree = "<group>"; };
 		736793451ABD2F3300B1E9B6 /* CategoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTVC.m; sourceTree = "<group>"; };
 		736793471ABE35DC00B1E9B6 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -95,7 +100,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5EC971416629B1D4E076ECC /* libPods.a in Frameworks */,
-				210CB61F1AC7A3CD00F3B40F /* FBSDKCoreKit.framework in Frameworks */,
+				733D181A1AC7B1C000C3D7B3 /* FBSDKCoreKit.framework in Frameworks */,
+				733D181B1AC7B1C000C3D7B3 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +118,8 @@
 		35AD7B20CA0353E64EC3671F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				210CB61E1AC7A3CC00F3B40F /* FBSDKCoreKit.framework */,
+				733D18181AC7B1C000C3D7B3 /* FBSDKCoreKit.framework */,
+				733D18191AC7B1C000C3D7B3 /* FBSDKLoginKit.framework */,
 				18E013DC775DA4BFFAABEA72 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -200,6 +207,8 @@
 		73A1091B1A9A878400233F37 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				733D181C1AC7B46300C3D7B3 /* LoginViewController.h */,
+				733D181D1AC7B46300C3D7B3 /* LoginViewController.m */,
 				7367934A1ABE659A00B1E9B6 /* AddFoodViewController.h */,
 				7367934B1ABE659A00B1E9B6 /* AddFoodViewController.m */,
 				7367934D1ABE6F8F00B1E9B6 /* AddFoodViewController2.h */,
@@ -381,6 +390,7 @@
 				73A1090B1A9A32FD00233F37 /* TopNavigationControllerVC.m in Sources */,
 				2188D71E1ABB49F2008BBC4A /* Fresh.xcdatamodeld in Sources */,
 				7367934F1ABE6F8F00B1E9B6 /* AddFoodViewController2.m in Sources */,
+				733D181E1AC7B46300C3D7B3 /* LoginViewController.m in Sources */,
 				73A109171A9A4DEE00233F37 /* MultipleFoodTableViewCell.m in Sources */,
 				73A108B71A96FCAC00233F37 /* main.m in Sources */,
 				7379D2B11AA3B870001B78C2 /* FreshViewController.m in Sources */,
@@ -512,6 +522,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fresh",
 					/Users/Xing/Documents/FacebookSDK,
+					/Users/lancelot/Developer/FacebookSDK,
 				);
 				INFOPLIST_FILE = Fresh/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -531,6 +542,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fresh",
 					/Users/Xing/Documents/FacebookSDK,
+					/Users/lancelot/Developer/FacebookSDK,
 				);
 				INFOPLIST_FILE = Fresh/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

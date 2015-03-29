@@ -224,12 +224,41 @@
                                             parameters:nil
                                                success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                                    NSLog(@"Post succeeded");
+                                                
+                                                 //  NSLog(@"food id : ",self.foodToPost.food_id);
+                                               [self scheduleNotificationWithItem:self.foodToPost interval:1];
                                                }
                                                failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                                    NSLog(@"error occurred': %@", error);
                                                }];
+        // schedule a notification
     }
 }
 
+- (void)scheduleNotificationWithItem:(Food2 *)item interval:(int)daysBefore {
+    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+    NSDateComponents *dateComps = [[NSDateComponents alloc] init];
+    [dateComps setDay:(NSInteger) item.expire_period];
+    NSDate *itemDate = [calendar dateFromComponents:dateComps];
+    
+    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+    if (localNotif == nil)
+        return;
+    localNotif.fireDate = [itemDate dateByAddingTimeInterval:-(daysBefore*60*60*24 - 10)];
+    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+    
+    localNotif.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ will expire in %i days.", nil), item.foodname, daysBefore];
+    localNotif.alertAction = NSLocalizedString(@"View Details", nil);
+    //localNotif.alertTitle = NSLocalizedString(@"Item Due", nil);
+    
+    localNotif.soundName = UILocalNotificationDefaultSoundName;
+    //localNotif.applicationIconBadgeNumber = 1;
+    [UIApplication sharedApplication].applicationIconBadgeNumber = [UIApplication sharedApplication].applicationIconBadgeNumber + 1;
+    
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:item.foodname forKey:item.foodname];
+    localNotif.userInfo = infoDict;
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+}
 
 @end

@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <RestKit/RestKit.h>
 #import "Food2.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 @interface AppDelegate ()
 
 @end
@@ -87,10 +89,27 @@
     //    [objectManager addRequestDescriptor:requestDescriptor_store_place];
     
     NSLog(@"done creating descriptors.");
+    [FBSDKLoginButton class];
+   // [FBProfilePictureView class];
     
+    UIUserNotificationType types = UIUserNotificationTypeBadge |
+    UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    UIUserNotificationSettings *mySettings =
+    [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
     
     return YES;
 
+}
+
+
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -108,6 +127,8 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBSDKAppEvents activateApp];
+
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
