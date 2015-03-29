@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:FreshPL.plist">
+   </FileRef>
+   <FileRef
       location = "group:Fresh.xcodeproj">
    </FileRef>
    <FileRef

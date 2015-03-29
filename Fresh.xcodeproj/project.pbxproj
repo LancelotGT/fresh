@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210CB61F1AC7A3CD00F3B40F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210CB61E1AC7A3CC00F3B40F /* FBSDKCoreKit.framework */; };
 		2188D71E1ABB49F2008BBC4A /* Fresh.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2188D71C1ABB49F2008BBC4A /* Fresh.xcdatamodeld */; };
 		2188D7211ABB4B16008BBC4A /* Food2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2188D7201ABB4B16008BBC4A /* Food2.m */; };
 		2188D7241ABB5055008BBC4A /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2188D7231ABB5055008BBC4A /* TestViewController.m */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		18E013DC775DA4BFFAABEA72 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		210CB61E1AC7A3CC00F3B40F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		2188D71D1ABB49F2008BBC4A /* Fresh.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fresh.xcdatamodel; sourceTree = "<group>"; };
 		2188D71F1ABB4B16008BBC4A /* Food2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food2.h; sourceTree = "<group>"; };
 		2188D7201ABB4B16008BBC4A /* Food2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food2.m; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5EC971416629B1D4E076ECC /* libPods.a in Frameworks */,
+				210CB61F1AC7A3CD00F3B40F /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +112,7 @@
 		35AD7B20CA0353E64EC3671F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				210CB61E1AC7A3CC00F3B40F /* FBSDKCoreKit.framework */,
 				18E013DC775DA4BFFAABEA72 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -507,6 +511,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fresh",
+					/Users/Xing/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = Fresh/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -525,6 +530,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fresh",
+					/Users/Xing/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = Fresh/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
