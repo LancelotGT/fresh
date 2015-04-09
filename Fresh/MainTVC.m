@@ -307,8 +307,8 @@
     NSInteger daysLeft = [self calculateLeftDays:food];
     
     NSString *output;
-    if (daysLeft >= 0) output = [NSString stringWithFormat:@"%ld days left.", daysLeft];
-    else output = [NSString stringWithFormat:@"This food has already expired."];
+    if (daysLeft >= 0) output = [NSString stringWithFormat:@"Food Name: %@\nQuality guarantee period: %ld days left.", food.foodname, daysLeft];
+    else output = [NSString stringWithFormat:@"Food Name: %@\nThis food has already expired.", food.foodname];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Food Information"
                                                     message:output

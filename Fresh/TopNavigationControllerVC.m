@@ -20,6 +20,7 @@
     self.navigationBar.tintColor = [UIColor whiteColor]; // Change tint color
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar_background"] forBarMetrics:UIBarMetricsDefault];
     [self addRightButton];
+    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 }
 
 - (void) addRightButton {
