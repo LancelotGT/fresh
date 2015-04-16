@@ -31,6 +31,8 @@
 		73A109141A9A47C600233F37 /* MainTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A109131A9A47C600233F37 /* MainTVC.m */; };
 		73A109171A9A4DEE00233F37 /* MultipleFoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A109161A9A4DEE00233F37 /* MultipleFoodTableViewCell.m */; };
 		73A1091A1A9A836F00233F37 /* MostlyAddedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A109191A9A836F00233F37 /* MostlyAddedTVC.m */; };
+		73CF7C181ADF888600B33408 /* NotificationSelectTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF7C171ADF888600B33408 /* NotificationSelectTVC.m */; };
+		73CF7C1B1ADF949800B33408 /* SettingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF7C1A1ADF949800B33408 /* SettingTVC.m */; };
 		E5EC971416629B1D4E076ECC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E013DC775DA4BFFAABEA72 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +93,10 @@
 		73A109161A9A4DEE00233F37 /* MultipleFoodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleFoodTableViewCell.m; sourceTree = "<group>"; };
 		73A109181A9A836F00233F37 /* MostlyAddedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MostlyAddedTVC.h; sourceTree = "<group>"; };
 		73A109191A9A836F00233F37 /* MostlyAddedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostlyAddedTVC.m; sourceTree = "<group>"; };
+		73CF7C161ADF888600B33408 /* NotificationSelectTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationSelectTVC.h; sourceTree = "<group>"; };
+		73CF7C171ADF888600B33408 /* NotificationSelectTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationSelectTVC.m; sourceTree = "<group>"; };
+		73CF7C191ADF949800B33408 /* SettingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTVC.h; sourceTree = "<group>"; };
+		73CF7C1A1ADF949800B33408 /* SettingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTVC.m; sourceTree = "<group>"; };
 		A3657C66BEAAC08FDCA6B77E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +213,10 @@
 		73A1091B1A9A878400233F37 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				73CF7C191ADF949800B33408 /* SettingTVC.h */,
+				73CF7C1A1ADF949800B33408 /* SettingTVC.m */,
+				73CF7C161ADF888600B33408 /* NotificationSelectTVC.h */,
+				73CF7C171ADF888600B33408 /* NotificationSelectTVC.m */,
 				733D181C1AC7B46300C3D7B3 /* LoginViewController.h */,
 				733D181D1AC7B46300C3D7B3 /* LoginViewController.m */,
 				7367934A1ABE659A00B1E9B6 /* AddFoodViewController.h */,
@@ -382,9 +392,11 @@
 				73A1091A1A9A836F00233F37 /* MostlyAddedTVC.m in Sources */,
 				73A109111A9A475300233F37 /* basicTVC.m in Sources */,
 				7379D2B71AA3CED8001B78C2 /* FoodCollection.m in Sources */,
+				73CF7C1B1ADF949800B33408 /* SettingTVC.m in Sources */,
 				736793491ABE35DC00B1E9B6 /* Constants.m in Sources */,
 				73A108BA1A96FCAC00233F37 /* AppDelegate.m in Sources */,
 				73A109141A9A47C600233F37 /* MainTVC.m in Sources */,
+				73CF7C181ADF888600B33408 /* NotificationSelectTVC.m in Sources */,
 				736793461ABD2F3300B1E9B6 /* CategoryTVC.m in Sources */,
 				7379D2BA1AA3CF9E001B78C2 /* Food.m in Sources */,
 				73A1090B1A9A32FD00233F37 /* TopNavigationControllerVC.m in Sources */,

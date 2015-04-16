@@ -11,6 +11,7 @@
 #import "Food2.h"
 #import "Constants.h"
 #import <Restkit/RestKit.h>
+#import "AppDelegate.h"
 
 @interface CategoryTVC ()
 @property (nonatomic, strong) UITextField *userInputField;
@@ -55,28 +56,28 @@
         else if (section == 3) return 2;
         else if (section == 4) return 2;
         else return 1;
-    } else return 1;
+    } else return 3;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (self.addFromSelectedIndex == 0) {
-        NSString *category = @"Other";
-        if (section == 0) category = @"Vegetable";
-        else if (section == 1) category = @"Fruit";
-        else if (section == 2) category = @"Meat";
-        else if (section == 3) category = @"Bakery";
-        else if (section == 4) category = @"Dairy";
-        else if (section == 5) category = @"Beverage";
-        return [NSString stringWithFormat:@"Category: %@", category];
-    } else return @"Mostly Added Items: ";
-}
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    if (self.addFromSelectedIndex == 0) {
+//        NSString *category = @"Other";
+//        if (section == 0) category = @"Vegetable";
+//        else if (section == 1) category = @"Fruit";
+//        else if (section == 2) category = @"Meat";
+//        else if (section == 3) category = @"Bakery";
+//        else if (section == 4) category = @"Dairy";
+//        else if (section == 5) category = @"Beverage";
+//        return [NSString stringWithFormat:@"Category: %@", category];
+//    } else return @"Mostly Added Items: ";
+//}
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *tempView=[[UIView alloc]initWithFrame:CGRectMake(0,200,300,244)];
     //tempView.backgroundColor=[UIColor clearColor];
     
-    UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(15,0,300,44)];
+    UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(15,-7,300,44)];
     //tempLabel.backgroundColor=[UIColor clearColor];
     //tempLabel.shadowColor = [UIColor blackColor];
     //tempLabel.shadowOffset = CGSizeMake(0,2);
@@ -92,8 +93,9 @@
         else if (section == 3) category = @"Bakery";
         else if (section == 4) category = @"Dairy";
         else if (section == 5) category = @"Beverage";
-    } else category = @"Mostly Added Items: ";
-    tempLabel.text = [NSString stringWithFormat:@"Category: %@", category];
+        tempLabel.text = [NSString stringWithFormat:@"Category: %@", category];
+    } else tempLabel.text = @"Mostly Added Items: ";
+
     [tempView addSubview:tempLabel];
     
     return tempView;
@@ -336,19 +338,51 @@
             if (indexPath.row == 0) {
                 [cell.button1 setImage:[UIImage imageNamed:@"milk"] forState:UIControlStateNormal];
                 [cell.button1 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-                cell.button1.tag = 14;
+                cell.button1.tag = 41;
                 
                 [cell.button2 setImage:[UIImage imageNamed:@"egg"] forState:UIControlStateNormal];
                 [cell.button2 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-                cell.button2.tag = 15;
+                cell.button2.tag = 42;
                 
-                [cell.button3 setImage:[UIImage imageNamed:@"potatoes"] forState:UIControlStateNormal];
+                [cell.button3 setImage:[UIImage imageNamed:@"ham"] forState:UIControlStateNormal];
                 [cell.button3 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-                cell.button3.tag = 16;
+                cell.button3.tag = 33;
                 
-                [cell.button4 setImage:[UIImage imageNamed:@"cupcake"] forState:UIControlStateNormal];
+                [cell.button4 setImage:[UIImage imageNamed:@"cheese slice"] forState:UIControlStateNormal];
                 [cell.button4 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-                cell.button4.tag = 17;
+                cell.button4.tag = 46;
+            } else if (indexPath.row == 1) {
+                [cell.button1 setImage:[UIImage imageNamed:@"apple"] forState:UIControlStateNormal];
+                [cell.button1 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+                cell.button1.tag = 16;
+                
+                [cell.button2 setImage:[UIImage imageNamed:@"banana"] forState:UIControlStateNormal];
+                [cell.button2 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+                cell.button2.tag = 19;
+                
+                [cell.button3 setImage:[UIImage imageNamed:@"broccoli"] forState:UIControlStateNormal];
+                [cell.button3 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+                cell.button3.tag = 1;
+                
+                [cell.button4 setImage:[UIImage imageNamed:@"ice cream"] forState:UIControlStateNormal];
+                [cell.button4 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+                cell.button4.tag = 43;
+            } else if (indexPath.row == 2) {
+                [cell.button1 setImage:[UIImage imageNamed:@"coffee"] forState:UIControlStateNormal];
+                [cell.button1 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+                cell.button1.tag = 48;
+                
+                [cell.button2 setImage:[UIImage imageNamed:@"cupcake"] forState:UIControlStateNormal];
+                [cell.button2 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+                cell.button2.tag = 40;
+                
+                [cell.button3 setImage:[UIImage imageNamed:@"lettuce"] forState:UIControlStateNormal];
+                [cell.button3 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+                cell.button3.tag = 5;
+                
+                [cell.button4 setImage:[UIImage imageNamed:@"potatoes"] forState:UIControlStateNormal];
+                [cell.button4 addTarget:self action:@selector(addFoodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+                cell.button4.tag = 11;
             } else {
                 [cell.button1 setImage:nil forState:UIControlStateNormal];
                 [cell.button2 setImage:nil forState:UIControlStateNormal];
@@ -413,7 +447,8 @@
                                                    NSLog(@"Post succeeded");
                                                 
                                                  //  NSLog(@"food id : ",self.foodToPost.food_id);
-                                               [self scheduleNotificationWithItem:self.foodToPost interval:1];
+                                                   int daysBefore = ((AppDelegate *)[UIApplication sharedApplication].delegate).notificationSelectedRow + 1;
+                                               [self scheduleNotificationWithItem:self.foodToPost interval:daysBefore];
                                                }
                                                failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                                    NSLog(@"error occurred': %@", error);

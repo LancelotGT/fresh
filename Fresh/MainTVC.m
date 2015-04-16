@@ -10,6 +10,7 @@
 #import "MultipleFoodTableViewCell.h"
 #import "Food2.h"
 #import <RestKit/RestKit.h>
+#import "AppDelegate.h"
 
 @interface MainTVC ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlState;
@@ -43,6 +44,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.separatorColor = [UIColor clearColor];
     // Do any additional setup after loading the view.
     [self loadFood:@"fridge"];
     [self loadFood:@"freezer"];
@@ -159,23 +161,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (IBAction)filterButtonClicked:(UIBarButtonItem *)sender {
-    NSString *actionSheetTitle = @"Filter By"; //Action Sheet Title
-//    NSAttributedString *actionSheetTitle = [[NSAttributedString alloc] initWithString:@"Filter By" attributes:@{NSFontAttributeName : [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline], NSForegroundColorAttributeName : [UIColor greenColor]}];
-    NSString *other1 = @"Date Added";
-    NSString *other2 = @"Expire date";
-    NSString *other3 = @"Categories";
-    NSString *cancelTitle = @"Cancel";
-    
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]
-                                  initWithTitle:actionSheetTitle
-                                  delegate:self
-                                  cancelButtonTitle:cancelTitle
-                                  destructiveButtonTitle:nil
-                                  otherButtonTitles:other1, other2, other3, nil];
-    [actionSheet showInView:self.view];
-}
-
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     // TO DO: called when a UIButton is tapped.
@@ -248,6 +233,11 @@
 - (void) displayFoodWithIndex:(int) index withPart:(NSMutableArray *) foodCollection withCell:(MultipleFoodTableViewCell *) cell{
     if (index <= [foodCollection count] - 1) {
         Food2* food = [foodCollection objectAtIndex:index];
+        NSInteger leftDays = [self calculateLeftDays:food];
+        NSString* imageName = food.foodname;
+        int enable = ((AppDelegate *)[UIApplication sharedApplication].delegate).enableExpiredFoodImage;
+        //NSLog(@"Enable: %d", enable);
+        if (leftDays < 0 && enable == 0) imageName = [imageName stringByAppendingString:@"_black"];
         int originalIndex;
         if (self.segmentedControlState.selectedSegmentIndex == 0) {
             originalIndex = (int) [self.fridgeFoodCollection indexOfObject:food];
@@ -255,22 +245,22 @@
             originalIndex = (int) [self.freezerFoodCollection indexOfObject:food];
         }
         if (index % 4 == 0) {
-            [cell.button1 setImage:[UIImage imageNamed:food.foodname] forState:UIControlStateNormal];
+            [cell.button1 setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
             cell.button1.tag = originalIndex;
             [cell.button1 addTarget:self action:@selector(foodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         }
         else if (index % 4 == 1) {
-            [cell.button2 setImage:[UIImage imageNamed:food.foodname] forState:UIControlStateNormal];
+            [cell.button2 setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
             cell.button2.tag = originalIndex;
             [cell.button2 addTarget:self action:@selector(foodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         }
         else if (index % 4 == 2) {
-            [cell.button3 setImage:[UIImage imageNamed:food.foodname] forState:UIControlStateNormal];
+            [cell.button3 setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
             cell.button3.tag = originalIndex;
             [cell.button3 addTarget:self action:@selector(foodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         }
         else {
-            [cell.button4 setImage:[UIImage imageNamed:food.foodname] forState:UIControlStateNormal];
+            [cell.button4 setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
             cell.button4.tag = originalIndex;
             [cell.button4 addTarget:self action:@selector(foodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         }
