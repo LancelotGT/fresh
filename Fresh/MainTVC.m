@@ -6,6 +6,9 @@
 //  Copyright (c) 2015年 Fortune Cookies. All rights reserved.
 //
 
+// Main interface controller. Load and display all food stored in fridge and freezer
+// Use table view
+
 #import "MainTVC.h"
 #import "MultipleFoodTableViewCell.h"
 #import "Food2.h"
@@ -152,15 +155,6 @@
     }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     // TO DO: called when a UIButton is tapped.
@@ -169,6 +163,8 @@
 - (IBAction)SegmentControlTouched:(UISegmentedControl *)sender {
     [self.tableView reloadData];
 }
+
+#pragma mark - Load food
 
 - (void)loadFood: (NSString *)partName{
     
@@ -220,9 +216,6 @@
                                                               [self.foodInFreezerAddedDates addObject:dateString];
                                                      }
                                                   }
-//                                                  for (Food2* food in self.freezerFoodCollection) {
-//                                                      NSLog(food.foodname);
-//                                                  }
                                                   [self.tableView reloadData];
                                               }
                                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
@@ -311,23 +304,12 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
-        
-        //Event *selectedEvent = self.events[indexPath.row];
-        //cancel that notification if the food is deleted
         NSArray *notifs = [UIApplication sharedApplication].scheduledLocalNotifications;
         NSLog(@"Number of notification: %lu", (unsigned long)[notifs count]);
-//        for (UILocalNotification *notif in notifs) {
-//            NSString *foodNameToDelete = [notif.userInfo objectForKey:self.lastChosenFoodId];
-//            NSLog(@"Food Name: %@, Food ID: %@", foodNameToDelete, self.lastChosenFoodId);
-//            if (foodNameToDelete) {
-//                [[UIApplication sharedApplication] cancelLocalNotification:notif];
-//            }
-//        }
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
         [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
         
         NSString* path = [@"/api/food/food_id/" stringByAppendingString:self.lastChosenFoodId];
-        //NSLog(@"%@", path);
         [[RKObjectManager sharedManager] deleteObject:NULL
                                                  path:path
                                            parameters:nil
@@ -353,12 +335,7 @@
     [comps setMonth:0];
     [comps setDay:daysToAdd];
     NSDate *expireDate = [gregorian dateByAddingComponents:comps toDate:tempDate  options:0];
-    // NSLog(@"add time: %@ ..., expire time: %@ ...,current time: %@ ...", tempDate,expireDate,currentDate);
-    
-   // NSLog(@"expireDate: %@ ...", expireDate);
     NSDateComponents *compLeft = [gregorian components:NSDayCalendarUnit fromDate:currentDate toDate:expireDate options:0];
-    //NSLog(@"%ld days left", [compLeft day]);
-    //NSString * output = [NSString stringWithFormat:@"%ld days left",[compLeft day]];
     return [compLeft day]+1;
 }
 

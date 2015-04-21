@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 Fortune Cookies. All rights reserved.
 //
 
+// some constants
 #import "Constants.h"
 
 @implementation Constants

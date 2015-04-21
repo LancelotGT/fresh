@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Fortune Cookies. All rights reserved.
 //
 
+// Model of the food stored in the refrigerator
+
 #import "Food2.h"
 
 

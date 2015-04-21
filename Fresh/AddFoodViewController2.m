@@ -6,6 +6,9 @@
 //  Copyright (c) 2015年 Fortune Cookies. All rights reserved.
 //
 
+// Switch the view from main view to add food view once the + button is clicked
+
+
 #import "AddFoodViewController2.h"
 #import "CategoryTVC.h"
 
@@ -53,14 +56,5 @@
     }
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

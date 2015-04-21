@@ -51,27 +51,27 @@
 		2188D71D1ABB49F2008BBC4A /* Fresh.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fresh.xcdatamodel; sourceTree = "<group>"; };
 		2188D71F1ABB4B16008BBC4A /* Food2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food2.h; sourceTree = "<group>"; };
 		2188D7201ABB4B16008BBC4A /* Food2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food2.m; sourceTree = "<group>"; };
-		2188D7221ABB5055008BBC4A /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		2188D7231ABB5055008BBC4A /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		2188D7221ABB5055008BBC4A /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestViewController.h; path = Fresh/TestViewController.h; sourceTree = "<group>"; };
+		2188D7231ABB5055008BBC4A /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestViewController.m; path = Fresh/TestViewController.m; sourceTree = "<group>"; };
 		3F28DAFA7652B5679C86C63C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		733D18181AC7B1C000C3D7B3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		733D18191AC7B1C000C3D7B3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		733D181C1AC7B46300C3D7B3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		733D181D1AC7B46300C3D7B3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		733D181C1AC7B46300C3D7B3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Fresh/LoginViewController.h; sourceTree = "<group>"; };
+		733D181D1AC7B46300C3D7B3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Fresh/LoginViewController.m; sourceTree = "<group>"; };
 		736793441ABD2F3300B1E9B6 /* CategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTVC.h; sourceTree = "<group>"; };
 		736793451ABD2F3300B1E9B6 /* CategoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTVC.m; sourceTree = "<group>"; };
 		736793471ABE35DC00B1E9B6 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		736793481ABE35DC00B1E9B6 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
-		7367934A1ABE659A00B1E9B6 /* AddFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFoodViewController.h; sourceTree = "<group>"; };
-		7367934B1ABE659A00B1E9B6 /* AddFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFoodViewController.m; sourceTree = "<group>"; };
+		7367934A1ABE659A00B1E9B6 /* AddFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFoodViewController.h; path = Fresh/AddFoodViewController.h; sourceTree = "<group>"; };
+		7367934B1ABE659A00B1E9B6 /* AddFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFoodViewController.m; path = Fresh/AddFoodViewController.m; sourceTree = "<group>"; };
 		7367934D1ABE6F8F00B1E9B6 /* AddFoodViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFoodViewController2.h; sourceTree = "<group>"; };
 		7367934E1ABE6F8F00B1E9B6 /* AddFoodViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFoodViewController2.m; sourceTree = "<group>"; };
-		7379D2AF1AA3B86F001B78C2 /* FreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreshViewController.h; sourceTree = "<group>"; };
-		7379D2B01AA3B86F001B78C2 /* FreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshViewController.m; sourceTree = "<group>"; };
-		7379D2B51AA3CED8001B78C2 /* FoodCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodCollection.h; sourceTree = "<group>"; };
-		7379D2B61AA3CED8001B78C2 /* FoodCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodCollection.m; sourceTree = "<group>"; };
-		7379D2B81AA3CF9E001B78C2 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
-		7379D2B91AA3CF9E001B78C2 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
+		7379D2AF1AA3B86F001B78C2 /* FreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FreshViewController.h; path = Fresh/FreshViewController.h; sourceTree = "<group>"; };
+		7379D2B01AA3B86F001B78C2 /* FreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FreshViewController.m; path = Fresh/FreshViewController.m; sourceTree = "<group>"; };
+		7379D2B51AA3CED8001B78C2 /* FoodCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoodCollection.h; path = Fresh/FoodCollection.h; sourceTree = "<group>"; };
+		7379D2B61AA3CED8001B78C2 /* FoodCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FoodCollection.m; path = Fresh/FoodCollection.m; sourceTree = "<group>"; };
+		7379D2B81AA3CF9E001B78C2 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Food.h; path = Fresh/Food.h; sourceTree = "<group>"; };
+		7379D2B91AA3CF9E001B78C2 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Food.m; path = Fresh/Food.m; sourceTree = "<group>"; };
 		73A108B11A96FCAC00233F37 /* Fresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A108B51A96FCAC00233F37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73A108B61A96FCAC00233F37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,14 +85,14 @@
 		73A109071A9A30D400233F37 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		73A109091A9A32FD00233F37 /* TopNavigationControllerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopNavigationControllerVC.h; sourceTree = "<group>"; };
 		73A1090A1A9A32FD00233F37 /* TopNavigationControllerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopNavigationControllerVC.m; sourceTree = "<group>"; };
-		73A1090F1A9A475300233F37 /* basicTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = basicTVC.h; sourceTree = "<group>"; };
-		73A109101A9A475300233F37 /* basicTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = basicTVC.m; sourceTree = "<group>"; };
+		73A1090F1A9A475300233F37 /* basicTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = basicTVC.h; path = Fresh/basicTVC.h; sourceTree = "<group>"; };
+		73A109101A9A475300233F37 /* basicTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = basicTVC.m; path = Fresh/basicTVC.m; sourceTree = "<group>"; };
 		73A109121A9A47C600233F37 /* MainTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTVC.h; sourceTree = "<group>"; };
 		73A109131A9A47C600233F37 /* MainTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTVC.m; sourceTree = "<group>"; };
 		73A109151A9A4DEE00233F37 /* MultipleFoodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleFoodTableViewCell.h; sourceTree = "<group>"; };
 		73A109161A9A4DEE00233F37 /* MultipleFoodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleFoodTableViewCell.m; sourceTree = "<group>"; };
-		73A109181A9A836F00233F37 /* MostlyAddedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MostlyAddedTVC.h; sourceTree = "<group>"; };
-		73A109191A9A836F00233F37 /* MostlyAddedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostlyAddedTVC.m; sourceTree = "<group>"; };
+		73A109181A9A836F00233F37 /* MostlyAddedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MostlyAddedTVC.h; path = Fresh/MostlyAddedTVC.h; sourceTree = "<group>"; };
+		73A109191A9A836F00233F37 /* MostlyAddedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MostlyAddedTVC.m; path = Fresh/MostlyAddedTVC.m; sourceTree = "<group>"; };
 		73CF7C161ADF888600B33408 /* NotificationSelectTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationSelectTVC.h; sourceTree = "<group>"; };
 		73CF7C171ADF888600B33408 /* NotificationSelectTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationSelectTVC.m; sourceTree = "<group>"; };
 		73CF7C191ADF949800B33408 /* SettingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTVC.h; sourceTree = "<group>"; };
@@ -121,6 +121,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21FDDD1C1AE6047700B71FC0 /* Temparory */ = {
+			isa = PBXGroup;
+			children = (
+				2188D7221ABB5055008BBC4A /* TestViewController.h */,
+				2188D7231ABB5055008BBC4A /* TestViewController.m */,
+				7379D2B51AA3CED8001B78C2 /* FoodCollection.h */,
+				7379D2B61AA3CED8001B78C2 /* FoodCollection.m */,
+				7379D2B81AA3CF9E001B78C2 /* Food.h */,
+				7379D2B91AA3CF9E001B78C2 /* Food.m */,
+				7379D2AF1AA3B86F001B78C2 /* FreshViewController.h */,
+				7379D2B01AA3B86F001B78C2 /* FreshViewController.m */,
+				73A109181A9A836F00233F37 /* MostlyAddedTVC.h */,
+				73A109191A9A836F00233F37 /* MostlyAddedTVC.m */,
+				733D181C1AC7B46300C3D7B3 /* LoginViewController.h */,
+				733D181D1AC7B46300C3D7B3 /* LoginViewController.m */,
+				7367934A1ABE659A00B1E9B6 /* AddFoodViewController.h */,
+				7367934B1ABE659A00B1E9B6 /* AddFoodViewController.m */,
+				73A1090F1A9A475300233F37 /* basicTVC.h */,
+				73A109101A9A475300233F37 /* basicTVC.m */,
+			);
+			name = Temparory;
+			sourceTree = "<group>";
+		};
 		35AD7B20CA0353E64EC3671F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +161,7 @@
 				73A108CD1A96FCAC00233F37 /* FreshTests */,
 				73A108B21A96FCAC00233F37 /* Products */,
 				E381A8BF1548BB7E8601C830 /* Pods */,
+				21FDDD1C1AE6047700B71FC0 /* Temparory */,
 				35AD7B20CA0353E64EC3671F /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -157,8 +181,6 @@
 				73A108BE1A96FCAC00233F37 /* Main.storyboard */,
 				2188D71C1ABB49F2008BBC4A /* Fresh.xcdatamodeld */,
 				2188D71F1ABB4B16008BBC4A /* Food2.h */,
-				2188D7221ABB5055008BBC4A /* TestViewController.h */,
-				2188D7231ABB5055008BBC4A /* TestViewController.m */,
 				2188D7201ABB4B16008BBC4A /* Food2.m */,
 				73A108B81A96FCAC00233F37 /* AppDelegate.h */,
 				73A108B91A96FCAC00233F37 /* AppDelegate.m */,
@@ -202,10 +224,6 @@
 			children = (
 				736793471ABE35DC00B1E9B6 /* Constants.h */,
 				736793481ABE35DC00B1E9B6 /* Constants.m */,
-				7379D2B81AA3CF9E001B78C2 /* Food.h */,
-				7379D2B91AA3CF9E001B78C2 /* Food.m */,
-				7379D2B51AA3CED8001B78C2 /* FoodCollection.h */,
-				7379D2B61AA3CED8001B78C2 /* FoodCollection.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -213,30 +231,20 @@
 		73A1091B1A9A878400233F37 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				73A109121A9A47C600233F37 /* MainTVC.h */,
+				73A109131A9A47C600233F37 /* MainTVC.m */,
+				73A109091A9A32FD00233F37 /* TopNavigationControllerVC.h */,
+				73A1090A1A9A32FD00233F37 /* TopNavigationControllerVC.m */,
+				7367934D1ABE6F8F00B1E9B6 /* AddFoodViewController2.h */,
+				7367934E1ABE6F8F00B1E9B6 /* AddFoodViewController2.m */,
+				73A109151A9A4DEE00233F37 /* MultipleFoodTableViewCell.h */,
+				73A109161A9A4DEE00233F37 /* MultipleFoodTableViewCell.m */,
 				73CF7C191ADF949800B33408 /* SettingTVC.h */,
 				73CF7C1A1ADF949800B33408 /* SettingTVC.m */,
 				73CF7C161ADF888600B33408 /* NotificationSelectTVC.h */,
 				73CF7C171ADF888600B33408 /* NotificationSelectTVC.m */,
-				733D181C1AC7B46300C3D7B3 /* LoginViewController.h */,
-				733D181D1AC7B46300C3D7B3 /* LoginViewController.m */,
-				7367934A1ABE659A00B1E9B6 /* AddFoodViewController.h */,
-				7367934B1ABE659A00B1E9B6 /* AddFoodViewController.m */,
-				7367934D1ABE6F8F00B1E9B6 /* AddFoodViewController2.h */,
-				7367934E1ABE6F8F00B1E9B6 /* AddFoodViewController2.m */,
-				73A109181A9A836F00233F37 /* MostlyAddedTVC.h */,
-				7379D2AF1AA3B86F001B78C2 /* FreshViewController.h */,
-				7379D2B01AA3B86F001B78C2 /* FreshViewController.m */,
-				73A109191A9A836F00233F37 /* MostlyAddedTVC.m */,
 				736793441ABD2F3300B1E9B6 /* CategoryTVC.h */,
 				736793451ABD2F3300B1E9B6 /* CategoryTVC.m */,
-				73A1090F1A9A475300233F37 /* basicTVC.h */,
-				73A109101A9A475300233F37 /* basicTVC.m */,
-				73A109121A9A47C600233F37 /* MainTVC.h */,
-				73A109131A9A47C600233F37 /* MainTVC.m */,
-				73A109151A9A4DEE00233F37 /* MultipleFoodTableViewCell.h */,
-				73A109161A9A4DEE00233F37 /* MultipleFoodTableViewCell.m */,
-				73A109091A9A32FD00233F37 /* TopNavigationControllerVC.h */,
-				73A1090A1A9A32FD00233F37 /* TopNavigationControllerVC.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

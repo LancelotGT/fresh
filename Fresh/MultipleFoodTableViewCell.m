@@ -6,6 +6,9 @@
 //  Copyright (c) 2015年 Fortune Cookies. All rights reserved.
 //
 
+// Configures the cell of the table view
+// Each cell contains four buttons, representing four food.
+
 #import "MultipleFoodTableViewCell.h"
 
 @implementation MultipleFoodTableViewCell

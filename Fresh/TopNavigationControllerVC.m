@@ -6,6 +6,9 @@
 //  Copyright (c) 2015年 Fortune Cookies. All rights reserved.
 //
 
+// Navigation controller on the top of the screen
+// Contains add food button and setting button
+
 #import "TopNavigationControllerVC.h"
 
 @interface TopNavigationControllerVC ()
@@ -35,14 +38,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

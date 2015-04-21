@@ -6,6 +6,9 @@
 //  Copyright (c) 2015年 Fortune Cookies. All rights reserved.
 //
 
+// Initialize RestKit, create object-mapping context, register for HTTP request descriptors
+// RestKit provides powerful mapping engine that integrates with Core Data and network HTTP requests and responses.
+
 #import "AppDelegate.h"
 #import <RestKit/RestKit.h>
 #import "Food2.h"
@@ -19,9 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    
-    // ...
-    
+
     
     // Override point for customization after application launch.
     NSURL *baseURL = [NSURL URLWithString:@"http://52.11.25.130:8080"];
@@ -40,7 +41,6 @@
     NSError *error = nil;
     
     NSString *path = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"Fresh.sqlite"];
-    //NSLog(@"!!!!!!  %@", path);
     
     objectManager.managedObjectStore = managedObjectStore;
     [objectManager.managedObjectStore addSQLitePersistentStoreAtPath:path fromSeedDatabaseAtPath:nil withConfiguration:nil options:nil error:&error];
@@ -84,13 +84,11 @@
     RKRequestDescriptor *requestDescriptor_food_del = [RKRequestDescriptor requestDescriptorWithMapping:[foodMapping inverseMapping] objectClass:[Food2 class] rootKeyPath:nil method:RKRequestMethodDELETE];
     [objectManager addRequestDescriptor:requestDescriptor_food_del];
     
-    //
-    //    RKRequestDescriptor *requestDescriptor_store_place = [RKRequestDescriptor requestDescriptorWithMapping:[foodMapping inverseMapping] objectClass:[Food class] rootKeyPath:nil method:RKRequestMethodGET];
-    //    [objectManager addRequestDescriptor:requestDescriptor_store_place];
-    
-    NSLog(@"done creating descriptors.");
+    // Done creating descriptors
+ 
     [FBSDKLoginButton class];
-   // [FBProfilePictureView class];
+    
+    // User notifications
     
     UIUserNotificationType types = UIUserNotificationTypeBadge |
     UIUserNotificationTypeSound | UIUserNotificationTypeAlert;

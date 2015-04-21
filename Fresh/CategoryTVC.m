@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 Fortune Cookies. All rights reserved.
 //
 
+// Controls view for adding food by categories
+
 #import "CategoryTVC.h"
 #import "MultipleFoodTableViewCell.h"
 #import "Food2.h"
@@ -59,18 +61,6 @@
     } else return 3;
 }
 
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    if (self.addFromSelectedIndex == 0) {
-//        NSString *category = @"Other";
-//        if (section == 0) category = @"Vegetable";
-//        else if (section == 1) category = @"Fruit";
-//        else if (section == 2) category = @"Meat";
-//        else if (section == 3) category = @"Bakery";
-//        else if (section == 4) category = @"Dairy";
-//        else if (section == 5) category = @"Beverage";
-//        return [NSString stringWithFormat:@"Category: %@", category];
-//    } else return @"Mostly Added Items: ";
-//}
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
@@ -415,9 +405,6 @@
     self.userInputField = [alert textFieldAtIndex: 0];
     self.userInputField.placeholder = [NSString stringWithFormat: @"%@", t];
     
-//    if ([textFieldInit.text intValue] > 0 || [textFieldInit.text intValue] < 365) {
-//        t = [textFieldInit.text intValue];
-//    }
     
     NSLog(@"The user input expiration date is %@", t);
     
@@ -458,10 +445,6 @@
 }
 
 - (void)scheduleNotificationWithItem:(Food2 *)item interval:(int)daysBefore {
-//    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
-//    NSDateComponents *dateComps = [[NSDateComponents alloc] init];
-//    [dateComps setDay:(NSInteger) item.expire_period];
-//    NSDate *itemDate = [calendar dateFromComponents:dateComps];
     NSDate *itemDate = [NSDate dateWithTimeIntervalSinceNow:60 * 60 * 24 * ([item.expire_period intValue] - daysBefore)];
     
     UILocalNotification *localNotif = [[UILocalNotification alloc] init];
@@ -470,10 +453,7 @@
     localNotif.fireDate = itemDate;
     NSLog(@"%@", itemDate);
     localNotif.timeZone = [NSTimeZone systemTimeZone];
-//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//    formatter.dateFormat = @"d.M.yyyy";
-//    NSString *string = [formatter stringFromDate:[NSDate date]];
-//    NSLog(@"%@", string);
+
     
     localNotif.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ will expire in %d days.", nil), item.foodname, daysBefore];
     localNotif.alertAction = NSLocalizedString(@"View Details", nil);
